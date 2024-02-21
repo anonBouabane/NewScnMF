@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:microfinance/util/Appcontants.dart';
-import 'package:microfinance/util/Textstyle.dart';
 import 'package:microfinance/util/images.dart';
 import 'package:microfinance/view/widget/WidgwtLogo.dart';
 import 'package:microfinance/view/widget/bottomappbar.dart';
@@ -28,14 +26,6 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                 height: 25,
               ),
               LogoWidget(),
-              Text(
-                Appconstants.title,
-                style: textTitle,
-              ),
-              Text(
-                Appconstants.subtitle,
-                style: textSubTitle,
-              ),
               SizedBox(
                 height: 10,
               ),

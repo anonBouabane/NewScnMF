@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:microfinance/util/Appcontants.dart';
-import 'package:microfinance/util/Textstyle.dart';
 import 'package:microfinance/util/images.dart';
 import 'package:microfinance/view/widget/WidgwtLogo.dart';
 
@@ -43,14 +41,6 @@ class _SignInScreenState extends State<SignInScreen> {
                     LogoWidget(),
                     SizedBox(
                       height: 10,
-                    ),
-                    Text(
-                      Appconstants.title,
-                      style: textTitle,
-                    ),
-                    Text(
-                      Appconstants.subtitle,
-                      style: textSubTitle,
                     ),
                     SizedBox(
                       height: 30,

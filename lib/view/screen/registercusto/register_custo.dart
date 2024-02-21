@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:microfinance/util/Appcontants.dart';
+import 'package:flutter/material.dart'; 
 import 'package:microfinance/util/Textstyle.dart';
 import 'package:microfinance/util/colorstyle.dart';
 import 'package:microfinance/util/images.dart';
@@ -49,14 +48,6 @@ class _RegisterCustoState extends State<RegisterCusto> {
                     height: 25,
                   ),
                   LogoWidget(),
-                  Text(
-                    Appconstants.title,
-                    style: textTitle,
-                  ),
-                  Text(
-                    Appconstants.subtitle,
-                    style: textSubTitle,
-                  ),
                   SizedBox(
                     height: 10,
                   ),

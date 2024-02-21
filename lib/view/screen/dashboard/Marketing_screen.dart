@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:microfinance/util/Appcontants.dart';
-import 'package:microfinance/util/Textstyle.dart';
+
 import 'package:microfinance/util/images.dart';
 import 'package:microfinance/view/screen/Informationcusto/information_custo.dart';
 import 'package:microfinance/view/screen/contact/contact_screen.dart';
@@ -35,14 +34,6 @@ class _MarketingState extends State<Marketing> {
                 height: 25,
               ),
               LogoWidget(),
-              Text(
-                Appconstants.title,
-                style: textTitle,
-              ),
-              Text(
-                Appconstants.subtitle,
-                style: textSubTitle,
-              ),
               SizedBox(
                 height: 5,
               ),
