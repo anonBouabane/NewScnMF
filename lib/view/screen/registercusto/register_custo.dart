@@ -57,7 +57,7 @@ class _RegisterCustoState extends State<RegisterCusto> {
                         Container(
                           child: Text(
                             "ລົງທະບຽນຂໍ້ມູນລູກຄ້າ",
-                            style: textregisterTitle,
+                            style: textheaderTitle,
                           ),
                         ),
                         Column(
@@ -163,11 +163,11 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                   children: [
                                     Text(
                                       "ເບີ",
-                                      style: reguler2,
+                                      style: normal,
                                     ),
                                     Text(
                                       "ວ໋ອດແອັບ",
-                                      style: reguler2,
+                                      style: normal,
                                     )
                                   ],
                                 ),
@@ -192,11 +192,11 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                   children: [
                                     Text(
                                       "ສະຖານທີ່",
-                                      style: reguler2,
+                                      style: normal,
                                     ),
                                     Text(
                                       "ເຮັດວຽກ",
-                                      style: reguler2,
+                                      style: normal,
                                     )
                                   ],
                                 ),
@@ -221,11 +221,11 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                   children: [
                                     Text(
                                       "ເຮືອນ",
-                                      style: reguler2,
+                                      style: normal,
                                     ),
                                     Text(
                                       "ເລກທີ",
-                                      style: reguler2,
+                                      style: normal,
                                     ),
                                   ],
                                 ),
@@ -257,7 +257,7 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                       decoration: InputDecoration(
                                           border: InputBorder.none,
                                           contentPadding:
-                                              EdgeInsets.only(left: 10.0)),
+                                              EdgeInsets.only(left: 10)),
                                       value: dropdowncity,
                                       icon: Icon(
                                         Icons.keyboard_arrow_down,
@@ -266,7 +266,7 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                       items: items.map((String items) {
                                         return DropdownMenuItem(
                                           value: items,
-                                          child: Text(items),
+                                          child: Text(items,style: regular,),
                                         );
                                       }).toList(),
                                       onChanged: (String? newValue) {
@@ -288,7 +288,7 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                       decoration: InputDecoration(
                                           border: InputBorder.none,
                                           contentPadding:
-                                              EdgeInsets.only(left: 10.0)),
+                                              EdgeInsets.only(left: 10)),
                                       value: dropdownprovince,
                                       icon: Icon(
                                         Icons.keyboard_arrow_down,
@@ -297,7 +297,7 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                       items: items.map((String items) {
                                         return DropdownMenuItem(
                                           value: items,
-                                          child: Text(items),
+                                          child: Text(items,style: regular,),
                                         );
                                       }).toList(),
                                       onChanged: (String? newValue) {
@@ -355,11 +355,11 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                           children: [
                                             Text(
                                               'ວັນທີອອກ',
-                                              style: reguler2,
+                                              style: normal,
                                             ),
                                             Text(
                                               'ບັດປະຈຳຕົວ',
-                                              style: reguler2,
+                                              style: normal,
                                             )
                                           ],
                                         ),
@@ -374,11 +374,11 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                           children: [
                                             Text(
                                               'ວັນທີຫມົດອາຍຸ',
-                                              style: reguler2,
+                                              style: normal,
                                             ),
                                             Text(
                                               'ບັດປະຈຳຕົວ',
-                                              style: reguler2,
+                                              style: normal,
                                             )
                                           ],
                                         ),
@@ -440,11 +440,11 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                           children: [
                                             Text(
                                               'ວັນທີອອກ',
-                                              style: reguler2,
+                                              style: normal,
                                             ),
                                             Text(
                                               'ປື້ມສຳມະໂນຄົວ',
-                                              style: reguler2,
+                                              style: normal,
                                             )
                                           ],
                                         ),
@@ -459,11 +459,11 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                           children: [
                                             Text(
                                               'ວັນທີຫມົດອາຍຸ',
-                                              style: reguler2,
+                                              style: normal,
                                             ),
                                             Text(
                                               'ປື້ມສຳມະໂນຄົວ',
-                                              style: reguler2,
+                                              style: normal,
                                             )
                                           ],
                                         ),

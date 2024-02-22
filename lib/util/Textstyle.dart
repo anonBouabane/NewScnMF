@@ -12,7 +12,7 @@ final textSubTitle = TextStyle(
     fontWeight: FontWeight.w400,
     color: Colors.white);
 
-final textregisterTitle = TextStyle(
+final textheaderTitle = TextStyle(
     fontFamily: "Roboto",
     fontSize: 22,
     fontWeight: FontWeight.bold,
@@ -24,9 +24,15 @@ final regular = TextStyle(
   fontWeight: FontWeight.bold,
   color: Color.fromARGB(255, 8, 62, 179),
 );
-final reguler2 = TextStyle(
+final normal = TextStyle(
   fontFamily: "Roboto",
   fontSize: 13,
   fontWeight: FontWeight.bold,
   color: Color.fromARGB(255, 8, 62, 179),
 );
+final regulardark = TextStyle(
+  fontFamily: "Roboto",
+  fontSize: 17,
+  fontWeight: FontWeight.w900,
+  color: Colors.black,
+); 

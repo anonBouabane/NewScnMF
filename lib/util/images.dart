@@ -17,4 +17,6 @@ class Images {
   static const String icon_profile = 'assets/images/addprofile_icon.png';
   static const String dropdown_menu = 'assets/images/dropdownmenu.png';
   static const String Record_icon = 'assets/images/Record_icon.png';
+  static const String header_info_custo ='assets/images/icon_search.png';
+  static const String input_research = 'assets/images/input_research.png';
 }
