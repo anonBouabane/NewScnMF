@@ -5,6 +5,7 @@ import 'package:microfinance/view/screen/Informationcusto/information_custo.dart
 import 'package:microfinance/view/screen/contact/contact_screen.dart';
 import 'package:microfinance/view/screen/profile/profile_screen.dart';
 import 'package:microfinance/view/screen/registercusto/register_custo.dart';
+import 'package:microfinance/view/widget/Functiondashboard.dart';
 import 'package:microfinance/view/widget/WidgwtLogo.dart';
 
 class Marketing extends StatefulWidget {
@@ -20,21 +21,21 @@ class _MarketingState extends State<Marketing> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(left: 10, right: 10, bottom: 20),
+        padding: const EdgeInsets.only(left: 10, right: 10, bottom: 20),
         width: double.infinity,
         height: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage(Images.Background2), fit: BoxFit.fill),
         ),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
-              LogoWidget(),
-              SizedBox(
+              const LogoWidget(),
+              const SizedBox(
                 height: 5,
               ),
               Row(
@@ -43,7 +44,7 @@ class _MarketingState extends State<Marketing> {
                   Container(
                     height: 30,
                     width: MediaQuery.of(context).size.width / 2,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
                           Images.user_background,
@@ -53,56 +54,27 @@ class _MarketingState extends State<Marketing> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: 20,
-                      right: 20,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20, left: 20),
-                    child: Container(
-                      height: 90,
-                      child: IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RegisterCusto(),
-                            ),
-                          );
-                        },
-                        icon: Image.asset(Images.register_custo),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 20,
-                      right: 20,
-                    ),
-                    child: Container(
-                      height: 90,
-                      child: IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => InfoCustoScreen()));
-                        },
-                        icon: Image.asset(
-                          Images.custo_info,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+               
+              FuncTionDashBoard(
+                  icon: Image.asset(Images.register_custo),
+                  onpressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const RegisterCusto()));
+                  }),
+              FuncTionDashBoard(
+                  icon: Image.asset(Images.custo_info),
+                  onpressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const InfoCustoScreen()));
+                  }),
+               
             ],
           ),
         ),
@@ -124,7 +96,7 @@ class _MarketingState extends State<Marketing> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ProFileScreen(),
+                      builder: (context) => const ProFileScreen(),
                     ),
                   );
                 },
@@ -135,7 +107,7 @@ class _MarketingState extends State<Marketing> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ConTactScreen(),
+                      builder: (context) => const ConTactScreen(),
                     ),
                   );
                 },

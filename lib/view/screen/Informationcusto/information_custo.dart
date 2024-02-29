@@ -110,14 +110,14 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 20,
+                                    height: 10,
                                     width: MediaQuery.of(context).size.width,
                                   ),
                                 ],
                               ),
                             ),SizedBox(
                               height: 500,
-                              width: double.infinity,
+                              width: MediaQuery.of(context).size.width,
                             ),
                           ],
                         ),

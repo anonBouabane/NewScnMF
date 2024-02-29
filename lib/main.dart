@@ -4,18 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:microfinance/helper/Routehelper.dart';
 import 'package:microfinance/util/Appcontants.dart';
-import 'package:microfinance/view/screen/dashboard/Marketing_screen.dart';
+import 'package:microfinance/view/screen/dashboard/Loanscreen.dart';  
 
 final Map<String, WidgetBuilder> map = {
-  '/Marketing': (BuildContext context) => Marketing(),
+  '/Marketing': (BuildContext context) => const LoanScreen(),
 };
 String? initial;
 void main() {
   if (GetPlatform.isMobile) {
-    HttpOverrides.global = new MyHttpOverrides();
+    HttpOverrides.global = MyHttpOverrides();
   }
   initial = RouteHelper.initial;
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

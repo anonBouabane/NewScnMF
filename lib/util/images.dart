@@ -19,4 +19,6 @@ class Images {
   static const String Record_icon = 'assets/images/Record_icon.png';
   static const String header_info_custo ='assets/images/icon_search.png';
   static const String input_research = 'assets/images/input_research.png';
+  static const String register_assets = 'assets/images/register_assets.png';
+  static const String loan = 'assets/images/request_Loan.png';
 }
