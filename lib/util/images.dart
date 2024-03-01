@@ -20,5 +20,12 @@ class Images {
   static const String header_info_custo ='assets/images/icon_search.png';
   static const String input_research = 'assets/images/input_research.png';
   static const String register_assets = 'assets/images/register_assets.png';
-  static const String loan = 'assets/images/request_Loan.png';
+  static const String request_loan = 'assets/images/request_Loan.png';
+  static const String check_assets = 'assets/images/check_assets.png';
+  static const String checkLoan = 'assets/images/checkLoan.png';
+  static const String payment_detail = 'assets/images/payment_detail.png';
+  static const String Guarantor = 'assets/images/Guarantor.png';
+  static const String permission_loan = 'assets/images/permissionLoan.png';
+  static const String loan ='assets/images/loan.png';
+
 }

@@ -22,6 +22,7 @@ class _LoanScreenState extends State<LoanScreen> {
         children: [
           PageView(
             children: [
+              // view1
               Container(
                 height: double.infinity,
                 width: double.infinity,
@@ -71,17 +72,21 @@ class _LoanScreenState extends State<LoanScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const InfoCustoScreen()));
+                                  builder: (context) =>
+                                      const InfoCustoScreen()));
                         },
                       ),
                       FuncTionDashBoard(
-                          icon: Image.asset(Images.register_assets), onpressed: () {}),
+                          icon: Image.asset(Images.register_assets),
+                          onpressed: () {}),
                       FuncTionDashBoard(
-                          icon: Image.asset(Images.loan), onpressed: () {}), 
+                          icon: Image.asset(Images.request_loan),
+                          onpressed: () {}),
                     ],
                   ),
                 ),
               ),
+              // view2
               Container(
                 height: double.infinity,
                 width: double.infinity,
@@ -117,31 +122,24 @@ class _LoanScreenState extends State<LoanScreen> {
                         height: 20,
                       ),
                       FuncTionDashBoard(
-                        icon: Image.asset(Images.register_custo),
-                        onpressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const RegisterCusto()));
-                        },
+                        icon: Image.asset(Images.receive_custo),
+                        onpressed: () {},
                       ),
                       FuncTionDashBoard(
-                        icon: Image.asset(Images.custo_info),
-                        onpressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const InfoCustoScreen()));
-                        },
+                        icon: Image.asset(Images.check_assets),
+                        onpressed: () {},
                       ),
                       FuncTionDashBoard(
-                          icon: Image.asset(Images.register_assets), onpressed: () {}),
+                          icon: Image.asset(Images.checkLoan),
+                          onpressed: () {}),
                       FuncTionDashBoard(
-                          icon: Image.asset(Images.loan), onpressed: () {})
+                          icon: Image.asset(Images.payment_detail),
+                          onpressed: () {})
                     ],
                   ),
                 ),
               ),
+              // view3
               Container(
                 height: double.infinity,
                 width: double.infinity,
@@ -177,25 +175,13 @@ class _LoanScreenState extends State<LoanScreen> {
                         height: 20,
                       ),
                       FuncTionDashBoard(
-                        icon: Image.asset(Images.register_custo),
-                        onpressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const RegisterCusto()));
-                        },
+                        icon: Image.asset(Images.Guarantor),
+                        onpressed: () {},
                       ),
                       FuncTionDashBoard(
-                        icon: Image.asset(Images.custo_info),
-                        onpressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const InfoCustoScreen()));
-                        },
+                        icon: Image.asset(Images.permission_loan),
+                        onpressed: () {},
                       ),
-                      FuncTionDashBoard(
-                          icon: Image.asset(Images.register_assets), onpressed: () {}),
                       FuncTionDashBoard(
                           icon: Image.asset(Images.loan), onpressed: () {}),
                     ],
