@@ -12,8 +12,8 @@ import 'package:microfinance/view/screen/receiveCusto/receivecusto_screen.dart';
 import 'package:microfinance/view/screen/registerassets/registerassets.dart';
 import 'package:microfinance/view/screen/registercusto/register_custo.dart';
 import 'package:microfinance/view/screen/requestLoan.dart/reqloan_screen.dart';
-import 'package:microfinance/view/widget/Functiondashboard.dart';
-import 'package:microfinance/view/widget/WidgwtLogo.dart';
+import 'package:microfinance/view/screen/dashboard/widget/Functiondashboard.dart';
+import 'package:microfinance/view/screen/dashboard/widget/WidgwtLogo.dart';
 
 class LoanScreen extends StatefulWidget {
   const LoanScreen({super.key});
@@ -36,7 +36,7 @@ class _LoanScreenState extends State<LoanScreen> {
                 width: double.infinity,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage(Images.Background2), fit: BoxFit.fill),
+                      image: AssetImage(Images.Background2), fit: BoxFit.cover),
                 ),
                 child: SingleChildScrollView(
                   child: Column(

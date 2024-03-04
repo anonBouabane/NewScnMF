@@ -5,8 +5,8 @@ import 'package:microfinance/view/screen/Informationcusto/information_custo.dart
 import 'package:microfinance/view/screen/contact/contact_screen.dart';
 import 'package:microfinance/view/screen/profile/profile_screen.dart';
 import 'package:microfinance/view/screen/registercusto/register_custo.dart';
-import 'package:microfinance/view/widget/Functiondashboard.dart';
-import 'package:microfinance/view/widget/WidgwtLogo.dart';
+import 'package:microfinance/view/screen/dashboard/widget/Functiondashboard.dart';
+import 'package:microfinance/view/screen/dashboard/widget/WidgwtLogo.dart';
 
 class Marketing extends StatefulWidget {
   const Marketing({super.key});

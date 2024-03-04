@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:microfinance/util/Textstyle.dart';
 import 'package:microfinance/util/images.dart';
-import 'package:microfinance/view/widget/WidgwtLogo.dart';
+import 'package:microfinance/view/screen/dashboard/widget/WidgwtLogo.dart';
 import 'package:microfinance/view/widget/bottomappbar.dart';
 import 'package:microfinance/view/widget/searchbar.dart';
 
@@ -17,9 +17,11 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        height: double.infinity,
+        width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(Images.Background), fit: BoxFit.fill),
+              image: AssetImage(Images.Background), fit: BoxFit.cover),
         ),
         child: GestureDetector(
           onTap: () {
@@ -52,7 +54,8 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                                   children: [
                                     SearchItem(
                                         width:
-                                            MediaQuery.of(context).size.width/2.2)
+                                            MediaQuery.of(context).size.width /
+                                                2.2)
                                   ],
                                 ),
                               ],
@@ -99,8 +102,6 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
             ),
           ),
         ),
-        height: double.infinity,
-        width: double.infinity,
       ),
       bottomNavigationBar: const WidgetBottomNav(),
     );

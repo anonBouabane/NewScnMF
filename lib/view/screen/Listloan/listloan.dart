@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:microfinance/util/Textstyle.dart';
 import 'package:microfinance/util/images.dart';
-import 'package:microfinance/view/widget/WidgwtLogo.dart';
+import 'package:microfinance/view/screen/dashboard/widget/WidgwtLogo.dart';
 import 'package:microfinance/view/widget/bottomappbar.dart';
 import 'package:microfinance/view/widget/searchbar.dart';
 

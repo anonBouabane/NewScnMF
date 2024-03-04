@@ -3,7 +3,7 @@ import 'package:microfinance/util/Textstyle.dart';
 import 'package:microfinance/util/colorstyle.dart';
 import 'package:microfinance/util/images.dart';
 import 'package:microfinance/view/widget/FormField_widget.dart';
-import 'package:microfinance/view/widget/WidgwtLogo.dart';
+import 'package:microfinance/view/screen/dashboard/widget/WidgwtLogo.dart';
 
 class RegisterCusto extends StatefulWidget {
   const RegisterCusto({super.key});

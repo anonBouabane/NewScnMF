@@ -7,7 +7,7 @@ import 'package:microfinance/util/images.dart';
 // ignore: must_be_immutable
 class WidgetFormfield extends StatelessWidget {
   double width;
-  var keyboardtype;
+  dynamic keyboardtype;
   WidgetFormfield({Key? key, required this.width, required this.keyboardtype})
       : super(key: key);
 
@@ -16,15 +16,15 @@ class WidgetFormfield extends StatelessWidget {
     return Container(
       height: 50,
       width: width,
-      decoration: BoxDecoration(
+      decoration:const BoxDecoration(
         image: DecorationImage(
             image: AssetImage(Images.inputBG), fit: BoxFit.fill),
       ),
       child: TextFormField(
-          decoration: InputDecoration(
+          decoration:const InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(left: 8.0)),
-          cursorColor: Color.fromARGB(255, 15, 106, 180),
+          cursorColor:const Color.fromARGB(255, 15, 106, 180),
           keyboardType: keyboardtype),
     );
   }

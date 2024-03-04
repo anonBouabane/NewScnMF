@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class FuncTionDashBoard extends StatelessWidget {
-  var onpressed;
-  var icon;
+  dynamic onpressed;
+  dynamic icon;
   FuncTionDashBoard({
     Key? key,
     required this.icon,

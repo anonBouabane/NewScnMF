@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:microfinance/util/images.dart';
-import 'package:microfinance/view/widget/WidgwtLogo.dart';
+import 'package:microfinance/view/screen/dashboard/widget/WidgwtLogo.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -24,7 +24,7 @@ class _SignInScreenState extends State<SignInScreen> {
           child: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(Images.Background), fit: BoxFit.fill),
             ),
@@ -35,14 +35,14 @@ class _SignInScreenState extends State<SignInScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(
+                 const   SizedBox(
                       height: 50,
                     ),
-                    LogoWidget(),
-                    SizedBox(
+                  const  LogoWidget(),
+                 const   SizedBox(
                       height: 10,
                     ),
-                    SizedBox(
+                 const   SizedBox(
                       height: 30,
                     ),
                     Row(
@@ -128,7 +128,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                 const   SizedBox(
                       height: 50,
                     ),
                     InkWell(
@@ -145,7 +145,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       child: Container(
                         height: 60,
                         width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             image: DecorationImage(
                                 image: AssetImage(Images.Login_btn))),
                       ),
