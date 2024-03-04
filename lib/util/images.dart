@@ -25,7 +25,7 @@ class Images {
   static const String checkLoan = 'assets/images/checkLoan.png';
   static const String payment_detail = 'assets/images/payment_detail.png';
   static const String Guarantor = 'assets/images/Guarantor.png';
-  static const String permission_loan = 'assets/images/permissionLoan.png';
+  static const String Listloan = 'assets/images/permissionLoan.png';
   static const String loan ='assets/images/loan.png';
 
 }

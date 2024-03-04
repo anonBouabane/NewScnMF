@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:microfinance/util/images.dart';
 import 'package:microfinance/view/screen/Informationcusto/information_custo.dart';
+import 'package:microfinance/view/screen/checkassets/checkassets.dart';
+import 'package:microfinance/view/screen/checkloan/checkloan.dart';
 import 'package:microfinance/view/screen/contact/contact_screen.dart';
+import 'package:microfinance/view/screen/patmentdetail/paymentdetail.dart';
+import 'package:microfinance/view/screen/Listloan/listloan.dart';
+import 'package:microfinance/view/screen/permissionloan/permission.dart';
 import 'package:microfinance/view/screen/profile/profile_screen.dart';
+import 'package:microfinance/view/screen/receiveCusto/receivecusto_screen.dart';
+import 'package:microfinance/view/screen/registerassets/registerassets.dart';
 import 'package:microfinance/view/screen/registercusto/register_custo.dart';
+import 'package:microfinance/view/screen/requestLoan.dart/reqloan_screen.dart';
 import 'package:microfinance/view/widget/Functiondashboard.dart';
 import 'package:microfinance/view/widget/WidgwtLogo.dart';
 
@@ -78,10 +86,23 @@ class _LoanScreenState extends State<LoanScreen> {
                       ),
                       FuncTionDashBoard(
                           icon: Image.asset(Images.register_assets),
-                          onpressed: () {}),
+                          onpressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const RegisterAssets()));
+                          }),
                       FuncTionDashBoard(
                           icon: Image.asset(Images.request_loan),
-                          onpressed: () {}),
+                          onpressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const RequestLoanscreen(),
+                              ),
+                            );
+                          }),
                     ],
                   ),
                 ),
@@ -123,18 +144,46 @@ class _LoanScreenState extends State<LoanScreen> {
                       ),
                       FuncTionDashBoard(
                         icon: Image.asset(Images.receive_custo),
-                        onpressed: () {},
+                        onpressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ReceiveCustoScreen(),
+                            ),
+                          );
+                        },
                       ),
                       FuncTionDashBoard(
                         icon: Image.asset(Images.check_assets),
-                        onpressed: () {},
+                        onpressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const CheckAssetsScreen(),
+                            ),
+                          );
+                        },
                       ),
                       FuncTionDashBoard(
                           icon: Image.asset(Images.checkLoan),
-                          onpressed: () {}),
+                          onpressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const CheckLoanScreen(),
+                              ),
+                            );
+                          }),
                       FuncTionDashBoard(
                           icon: Image.asset(Images.payment_detail),
-                          onpressed: () {})
+                          onpressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const PaymentDetail(),
+                              ),
+                            );
+                          })
                     ],
                   ),
                 ),
@@ -179,11 +228,23 @@ class _LoanScreenState extends State<LoanScreen> {
                         onpressed: () {},
                       ),
                       FuncTionDashBoard(
-                        icon: Image.asset(Images.permission_loan),
-                        onpressed: () {},
+                        icon: Image.asset(Images.Listloan),
+                        onpressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Listloan()));
+                        },
                       ),
                       FuncTionDashBoard(
-                          icon: Image.asset(Images.loan), onpressed: () {}),
+                          icon: Image.asset(Images.loan),
+                          onpressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const PerMissionLoan()));
+                           }),
                     ],
                   ),
                 ),

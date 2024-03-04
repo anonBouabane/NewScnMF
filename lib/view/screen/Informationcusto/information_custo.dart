@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:microfinance/util/Textstyle.dart';
-import 'package:microfinance/util/colorstyle.dart';
 import 'package:microfinance/util/images.dart';
 import 'package:microfinance/view/widget/WidgwtLogo.dart';
 import 'package:microfinance/view/widget/bottomappbar.dart';
+import 'package:microfinance/view/widget/searchbar.dart';
 
 class InfoCustoScreen extends StatefulWidget {
   const InfoCustoScreen({super.key});
@@ -17,117 +17,87 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage(Images.Background), fit: BoxFit.fill),
         ),
-        child: ListView(
-          children: <Widget>[
-            GestureDetector(
-              onTap: () {
-                FocusScope.of(context).unfocus();
-              },
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.all(5.0),
+        child: GestureDetector(
+          onTap: () {
+            FocusScope.of(context).unfocus();
+          },
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 25,
+                ),
+                const LogoWidget(),
+                const SizedBox(
+                  height: 10,
+                ),
+                Card(
                   child: Column(
                     children: [
-                      SizedBox(
-                        height: 25,
-                      ),
-                      LogoWidget(),
-                      SizedBox(
-                        height: 10,
-                      ),
                       Card(
                         child: Column(
                           children: [
-                            Card(
-                              child: Column(
-                                children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      Text(
-                                        "ຂໍ້ມູນລູກຄ້າ",
-                                        style: textheaderTitle,
-                                      ),
-                                      Row(
-                                        children: [
-                                          Icon(
-                                            Icons.search,
-                                            color: normalcolors,
-                                          ),
-                                          Container(
-                                            height: 50,
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
-                                                2.5,
-                                            decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                image: AssetImage(
-                                                    Images.input_research),
-                                              ),
-                                            ),
-                                            child: TextFormField(
-                                              decoration: InputDecoration(
-                                                  border: InputBorder.none,
-                                                  contentPadding:
-                                                      EdgeInsets.symmetric(
-                                                          vertical: 6.0,
-                                                          horizontal: 50)),
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Text(
-                                        "ຮູບ",
-                                        style: regulardark,
-                                      ),
-                                      Text(
-                                        "ຊື່ລູກຄ້າ",
-                                        style: regulardark,
-                                      ),
-                                      Text(
-                                        "ອາຍຸ",
-                                        style: regulardark,
-                                      ),
-                                      Text(
-                                        "ເບີໂທ",
-                                        style: regulardark,
-                                      )
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                    width: MediaQuery.of(context).size.width,
-                                  ),
-                                ],
-                              ),
-                            ),SizedBox(
-                              height: 500,
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Text(
+                                  "ຂໍ້ມູນລູກຄ້າ",
+                                  style: textheaderTitle,
+                                ),
+                                Row(
+                                  children: [
+                                    SearchItem(
+                                        width:
+                                            MediaQuery.of(context).size.width/2.2)
+                                  ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text(
+                                  "ຮູບ",
+                                  style: regulardark,
+                                ),
+                                Text(
+                                  "ຊື່ລູກຄ້າ",
+                                  style: regulardark,
+                                ),
+                                Text(
+                                  "ອາຍຸ",
+                                  style: regulardark,
+                                ),
+                                Text(
+                                  "ເບີໂທ",
+                                  style: regulardark,
+                                )
+                              ],
+                            ),
+                            SizedBox(
+                              height: 10,
                               width: MediaQuery.of(context).size.width,
                             ),
                           ],
                         ),
-                      )
+                      ),
+                      SizedBox(
+                        height: 500,
+                        width: MediaQuery.of(context).size.width,
+                      ),
                     ],
                   ),
-                ),
-              ),
+                )
+              ],
             ),
-          ],
+          ),
         ),
         height: double.infinity,
         width: double.infinity,

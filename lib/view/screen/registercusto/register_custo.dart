@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
 import 'package:microfinance/util/Textstyle.dart';
 import 'package:microfinance/util/colorstyle.dart';
 import 'package:microfinance/util/images.dart';
@@ -40,457 +40,451 @@ class _RegisterCustoState extends State<RegisterCusto> {
                 image: AssetImage(Images.Background3), fit: BoxFit.fill),
           ),
           child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 25,
-                  ),
-                  LogoWidget(),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Card(
-                    child: Column(
-                      children: [
-                        Container(
-                          child: Text(
-                            "ລົງທະບຽນຂໍ້ມູນລູກຄ້າ",
-                            style: textheaderTitle,
-                          ),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 25,
+                ),
+                LogoWidget(),
+                SizedBox(
+                  height: 10,
+                ),
+                Card(
+                  child: Column(
+                    children: [
+                      Container(
+                        child: Text(
+                          "ລົງທະບຽນຂໍ້ມູນລູກຄ້າ",
+                          style: textheaderTitle,
                         ),
-                        Column(
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.only(top: 30),
-                                  height: 90,
-                                  width: MediaQuery.of(context).size.width / 4,
-                                  child: IconButton(
-                                      onPressed: () {},
-                                      icon: Image.asset(Images.icon_profile)),
-                                ),
-                                Column(
-                                  children: [
-                                    Text("ຊື່ ແລະ ນາມສະກຸນ ລູກຄ້າ",
-                                        style: regular),
-                                    WidgetFormfield(
-                                      width: MediaQuery.of(context).size.width /
-                                          1.5,
-                                      keyboardtype: TextInputType.text,
+                      ),
+                      Column(
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(top: 30),
+                                height: 90,
+                                width: MediaQuery.of(context).size.width / 4,
+                                child: IconButton(
+                                    onPressed: () {},
+                                    icon: Image.asset(Images.icon_profile)),
+                              ),
+                              Column(
+                                children: [
+                                  Text("ຊື່ ແລະ ນາມສະກຸນ ລູກຄ້າ",
+                                      style: regular),
+                                  WidgetFormfield(
+                                    width:
+                                        MediaQuery.of(context).size.width / 1.5,
+                                    keyboardtype: TextInputType.text,
+                                  ),
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text(
+                                          "ເພດ",
+                                          style: regular,
+                                        ),
+                                      ),
+                                      Column(
+                                        children: [
+                                          Text(
+                                            "ຍິງ",
+                                            style: regular,
+                                          ),
+                                          Radio(
+                                            activeColor: Color.fromARGB(
+                                                255, 15, 106, 180),
+                                            value: 1,
+                                            groupValue: selectedvalue,
+                                            onChanged: (value) => setState(
+                                                () => selectedvalue = 1),
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                          )
+                                        ],
+                                      ),
+                                      Column(
+                                        children: [
+                                          Text(
+                                            "ຊາຍ",
+                                            style: regular,
+                                          ),
+                                          Radio(
+                                            activeColor: Color.fromARGB(
+                                                255, 15, 106, 180),
+                                            value: 2,
+                                            groupValue: selectedvalue,
+                                            onChanged: (value) => setState(
+                                                () => selectedvalue = 2),
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                          )
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text(
+                                          "ອາຍຸ",
+                                          style: regular,
+                                        ),
+                                      ),
+                                      WidgetFormfield(
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                7,
+                                        keyboardtype: TextInputType.number,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "ເບີໂທ",
+                                style: regular,
+                              ),
+                              Expanded(
+                                  child: WidgetFormfield(
+                                      width: MediaQuery.of(context).size.width,
+                                      keyboardtype: TextInputType.number)),
+                              Column(
+                                children: [
+                                  Text(
+                                    "ເບີ",
+                                    style: normal,
+                                  ),
+                                  Text(
+                                    "ວ໋ອດແອັບ",
+                                    style: normal,
+                                  )
+                                ],
+                              ),
+                              Expanded(
+                                child: WidgetFormfield(
+                                    width: MediaQuery.of(context).size.width,
+                                    keyboardtype: TextInputType.number),
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "ອາຊີບ",
+                                style: regular,
+                              ),
+                              WidgetFormfield(
+                                  width: MediaQuery.of(context).size.width / 3,
+                                  keyboardtype: TextInputType.text),
+                              Column(
+                                children: [
+                                  Text(
+                                    "ສະຖານທີ່",
+                                    style: normal,
+                                  ),
+                                  Text(
+                                    "ເຮັດວຽກ",
+                                    style: normal,
+                                  )
+                                ],
+                              ),
+                              Expanded(
+                                  child: WidgetFormfield(
+                                      width: MediaQuery.of(context).size.width,
+                                      keyboardtype: TextInputType.text))
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "ຫນ່ວຍ",
+                                style: regular,
+                              ),
+                              WidgetFormfield(
+                                  width:
+                                      MediaQuery.of(context).size.width / 8.0,
+                                  keyboardtype: TextInputType.number),
+                              Column(
+                                children: [
+                                  Text(
+                                    "ເຮືອນ",
+                                    style: normal,
+                                  ),
+                                  Text(
+                                    "ເລກທີ",
+                                    style: normal,
+                                  ),
+                                ],
+                              ),
+                              WidgetFormfield(
+                                  width:
+                                      MediaQuery.of(context).size.width / 7.0,
+                                  keyboardtype: TextInputType.number),
+                              Text(
+                                "ບ້ານ",
+                                style: regular,
+                              ),
+                              Expanded(
+                                  child: WidgetFormfield(
+                                      width: MediaQuery.of(context).size.width,
+                                      keyboardtype: TextInputType.text)),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                'ເມຶອງ',
+                                style: regular,
+                              ),
+                              Expanded(
+                                child: Container(
+                                  height: 50,
+                                  child: DropdownButtonFormField(
+                                    decoration: InputDecoration(
+                                        border: InputBorder.none,
+                                        contentPadding:
+                                            EdgeInsets.only(left: 10)),
+                                    value: dropdowncity,
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down,
+                                      color: regularColor,
                                     ),
-                                    Row(
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            "ເພດ",
-                                            style: regular,
-                                          ),
+                                    items: items.map((String items) {
+                                      return DropdownMenuItem(
+                                        value: items,
+                                        child: Text(
+                                          items,
+                                          style: regular,
                                         ),
-                                        Column(
-                                          children: [
-                                            Text(
-                                              "ຍິງ",
-                                              style: regular,
-                                            ),
-                                            Radio(
-                                              activeColor: Color.fromARGB(
-                                                  255, 15, 106, 180),
-                                              value: 1,
-                                              groupValue: selectedvalue,
-                                              onChanged: (value) => setState(
-                                                  () => selectedvalue = 1),
-                                            ),
-                                            SizedBox(
-                                              height: 20,
-                                            )
-                                          ],
+                                      );
+                                    }).toList(),
+                                    onChanged: (String? newValue) {
+                                      setState(() {
+                                        dropdowncity = newValue!;
+                                      });
+                                    },
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                'ແຂວງ',
+                                style: regular,
+                              ),
+                              Expanded(
+                                child: Container(
+                                  height: 50,
+                                  child: DropdownButtonFormField(
+                                    decoration: InputDecoration(
+                                        border: InputBorder.none,
+                                        contentPadding:
+                                            EdgeInsets.only(left: 10)),
+                                    value: dropdownprovince,
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down,
+                                      color: regularColor,
+                                    ),
+                                    items: items.map((String items) {
+                                      return DropdownMenuItem(
+                                        value: items,
+                                        child: Text(
+                                          items,
+                                          style: regular,
                                         ),
-                                        Column(
-                                          children: [
-                                            Text(
-                                              "ຊາຍ",
-                                              style: regular,
-                                            ),
-                                            Radio(
-                                              activeColor: Color.fromARGB(
-                                                  255, 15, 106, 180),
-                                              value: 2,
-                                              groupValue: selectedvalue,
-                                              onChanged: (value) => setState(
-                                                  () => selectedvalue = 2),
-                                            ),
-                                            SizedBox(
-                                              height: 20,
-                                            )
-                                          ],
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            "ອາຍຸ",
-                                            style: regular,
-                                          ),
-                                        ),
-                                        WidgetFormfield(
+                                      );
+                                    }).toList(),
+                                    onChanged: (String? newValue) {
+                                      setState(() {
+                                        dropdownprovince = newValue!;
+                                      });
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Column(
+                                children: [
+                                  Container(
+                                    height: 70,
+                                    width:
+                                        MediaQuery.of(context).size.width / 5,
+                                    child: IconButton(
+                                      onPressed: () {},
+                                      icon: Image.asset(Images.icon_profile),
+                                    ),
+                                  ),
+                                  Text(
+                                    "ຮູບບັດ",
+                                    style: regular,
+                                  ),
+                                  Text(
+                                    "ປະຈຳຕົວ",
+                                    style: regular,
+                                  )
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "ເລກບັດປະຈຳຕົວ",
+                                        style: regular,
+                                      ),
+                                      WidgetFormfield(
                                           width: MediaQuery.of(context)
                                                   .size
                                                   .width /
-                                              7,
-                                          keyboardtype: TextInputType.number,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  "ເບີໂທ",
-                                  style: regular,
-                                ),
-                                Expanded(
-                                    child: WidgetFormfield(
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        keyboardtype: TextInputType.number)),
-                                Column(
-                                  children: [
-                                    Text(
-                                      "ເບີ",
-                                      style: normal,
-                                    ),
-                                    Text(
-                                      "ວ໋ອດແອັບ",
-                                      style: normal,
-                                    )
-                                  ],
-                                ),
-                                Expanded(
-                                  child: WidgetFormfield(
-                                      width: MediaQuery.of(context).size.width,
-                                      keyboardtype: TextInputType.number),
-                                )
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  "ອາຊີບ",
-                                  style: regular,
-                                ),
-                                WidgetFormfield(
-                                    width:
-                                        MediaQuery.of(context).size.width / 3,
-                                    keyboardtype: TextInputType.text),
-                                Column(
-                                  children: [
-                                    Text(
-                                      "ສະຖານທີ່",
-                                      style: normal,
-                                    ),
-                                    Text(
-                                      "ເຮັດວຽກ",
-                                      style: normal,
-                                    )
-                                  ],
-                                ),
-                                Expanded(
-                                    child: WidgetFormfield(
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        keyboardtype: TextInputType.text))
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  "ຫນ່ວຍ",
-                                  style: regular,
-                                ),
-                                WidgetFormfield(
-                                    width:
-                                        MediaQuery.of(context).size.width / 8.0,
-                                    keyboardtype: TextInputType.number),
-                                Column(
-                                  children: [
-                                    Text(
-                                      "ເຮືອນ",
-                                      style: normal,
-                                    ),
-                                    Text(
-                                      "ເລກທີ",
-                                      style: normal,
-                                    ),
-                                  ],
-                                ),
-                                WidgetFormfield(
-                                    width:
-                                        MediaQuery.of(context).size.width / 7.0,
-                                    keyboardtype: TextInputType.number),
-                                Text(
-                                  "ບ້ານ",
-                                  style: regular,
-                                ),
-                                Expanded(
-                                    child: WidgetFormfield(
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        keyboardtype: TextInputType.text)),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  'ເມຶອງ',
-                                  style: regular,
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    height: 50,
-                                    child: DropdownButtonFormField(
-                                      decoration: InputDecoration(
-                                          border: InputBorder.none,
-                                          contentPadding:
-                                              EdgeInsets.only(left: 10)),
-                                      value: dropdowncity,
-                                      icon: Icon(
-                                        Icons.keyboard_arrow_down,
-                                        color: regularColor,
+                                              2.5,
+                                          keyboardtype: TextInputType.number)
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Text(
+                                            'ວັນທີອອກ',
+                                            style: normal,
+                                          ),
+                                          Text(
+                                            'ບັດປະຈຳຕົວ',
+                                            style: normal,
+                                          )
+                                        ],
                                       ),
-                                      items: items.map((String items) {
-                                        return DropdownMenuItem(
-                                          value: items,
-                                          child: Text(items,style: regular,),
-                                        );
-                                      }).toList(),
-                                      onChanged: (String? newValue) {
-                                        setState(() {
-                                          dropdowncity = newValue!;
-                                        });
-                                      },
+                                      WidgetFormfield(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              6,
+                                          keyboardtype: TextInputType.datetime),
+                                      Column(
+                                        children: [
+                                          Text(
+                                            'ວັນທີຫມົດອາຍຸ',
+                                            style: normal,
+                                          ),
+                                          Text(
+                                            'ບັດປະຈຳຕົວ',
+                                            style: normal,
+                                          )
+                                        ],
+                                      ),
+                                      WidgetFormfield(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              6,
+                                          keyboardtype: TextInputType.datetime)
+                                    ],
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Column(
+                                children: [
+                                  Container(
+                                    height: 70,
+                                    width:
+                                        MediaQuery.of(context).size.width / 5,
+                                    child: IconButton(
+                                      onPressed: () {},
+                                      icon: Image.asset(Images.icon_profile),
                                     ),
                                   ),
-                                ),
-                                Text(
-                                  'ແຂວງ',
-                                  style: regular,
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    height: 50,
-                                    child: DropdownButtonFormField(
-                                      decoration: InputDecoration(
-                                          border: InputBorder.none,
-                                          contentPadding:
-                                              EdgeInsets.only(left: 10)),
-                                      value: dropdownprovince,
-                                      icon: Icon(
-                                        Icons.keyboard_arrow_down,
-                                        color: regularColor,
-                                      ),
-                                      items: items.map((String items) {
-                                        return DropdownMenuItem(
-                                          value: items,
-                                          child: Text(items,style: regular,),
-                                        );
-                                      }).toList(),
-                                      onChanged: (String? newValue) {
-                                        setState(() {
-                                          dropdownprovince = newValue!;
-                                        });
-                                      },
-                                    ),
+                                  Text(
+                                    'ຮູບປື້ມ',
+                                    style: regular,
                                   ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Container(
-                                      height: 70,
-                                      width:
-                                          MediaQuery.of(context).size.width / 5,
-                                      child: IconButton(
-                                        onPressed: () {},
-                                        icon: Image.asset(Images.icon_profile),
+                                  Text(
+                                    "ສຳມະໂນຄົວ",
+                                    style: regular,
+                                  )
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "ເລກປື້ມສຳມະໂນຄົວ",
+                                        style: regular,
                                       ),
-                                    ),
-                                    Text(
-                                      "ຮູບບັດ",
-                                      style: regular,
-                                    ),
-                                    Text(
-                                      "ປະຈຳຕົວ",
-                                      style: regular,
-                                    )
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Text(
-                                          "ເລກບັດປະຈຳຕົວ",
-                                          style: regular,
-                                        ),
-                                        WidgetFormfield(
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
-                                                2.5,
-                                            keyboardtype: TextInputType.number)
-                                      ],
-                                    ),
-                                    Row(
-                                      children: [
-                                        Column(
-                                          children: [
-                                            Text(
-                                              'ວັນທີອອກ',
-                                              style: normal,
-                                            ),
-                                            Text(
-                                              'ບັດປະຈຳຕົວ',
-                                              style: normal,
-                                            )
-                                          ],
-                                        ),
-                                        WidgetFormfield(
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
-                                                6,
-                                            keyboardtype:
-                                                TextInputType.datetime),
-                                        Column(
-                                          children: [
-                                            Text(
-                                              'ວັນທີຫມົດອາຍຸ',
-                                              style: normal,
-                                            ),
-                                            Text(
-                                              'ບັດປະຈຳຕົວ',
-                                              style: normal,
-                                            )
-                                          ],
-                                        ),
-                                        WidgetFormfield(
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
-                                                6,
-                                            keyboardtype:
-                                                TextInputType.datetime)
-                                      ],
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Container(
-                                      height: 70,
-                                      width:
-                                          MediaQuery.of(context).size.width / 5,
-                                      child: IconButton(
-                                        onPressed: () {},
-                                        icon: Image.asset(Images.icon_profile),
+                                      WidgetFormfield(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              2.5,
+                                          keyboardtype: TextInputType.number)
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Text(
+                                            'ວັນທີອອກ',
+                                            style: normal,
+                                          ),
+                                          Text(
+                                            'ປື້ມສຳມະໂນຄົວ',
+                                            style: normal,
+                                          )
+                                        ],
                                       ),
-                                    ),
-                                    Text(
-                                      'ຮູບປື້ມ',
-                                      style: regular,
-                                    ),
-                                    Text(
-                                      "ສຳມະໂນຄົວ",
-                                      style: regular,
-                                    )
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Text(
-                                          "ເລກປື້ມສຳມະໂນຄົວ",
-                                          style: regular,
-                                        ),
-                                        WidgetFormfield(
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
-                                                2.5,
-                                            keyboardtype: TextInputType.number)
-                                      ],
-                                    ),
-                                    Row(
-                                      children: [
-                                        Column(
-                                          children: [
-                                            Text(
-                                              'ວັນທີອອກ',
-                                              style: normal,
-                                            ),
-                                            Text(
-                                              'ປື້ມສຳມະໂນຄົວ',
-                                              style: normal,
-                                            )
-                                          ],
-                                        ),
-                                        WidgetFormfield(
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
-                                                6,
-                                            keyboardtype:
-                                                TextInputType.datetime),
-                                        Column(
-                                          children: [
-                                            Text(
-                                              'ວັນທີຫມົດອາຍຸ',
-                                              style: normal,
-                                            ),
-                                            Text(
-                                              'ປື້ມສຳມະໂນຄົວ',
-                                              style: normal,
-                                            )
-                                          ],
-                                        ),
-                                        WidgetFormfield(
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
-                                                6,
-                                            keyboardtype:
-                                                TextInputType.datetime)
-                                      ],
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height / 12,
-                          width: MediaQuery.of(context).size.width,
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
+                                      WidgetFormfield(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              6,
+                                          keyboardtype: TextInputType.datetime),
+                                      Column(
+                                        children: [
+                                          Text(
+                                            'ວັນທີຫມົດອາຍຸ',
+                                            style: normal,
+                                          ),
+                                          Text(
+                                            'ປື້ມສຳມະໂນຄົວ',
+                                            style: normal,
+                                          )
+                                        ],
+                                      ),
+                                      WidgetFormfield(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              6,
+                                          keyboardtype: TextInputType.datetime)
+                                    ],
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height / 12,
+                        width: MediaQuery.of(context).size.width,
+                      ),
+                    ],
+                  ),
+                )
+              ],
             ),
           ),
         ),
