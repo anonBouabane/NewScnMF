@@ -35,100 +35,82 @@ class _SignInScreenState extends State<SignInScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                 const   SizedBox(
+                    const SizedBox(
                       height: 50,
                     ),
-                  const  LogoWidget(),
-                 const   SizedBox(
+                    const LogoWidget(),
+                    const SizedBox(
                       height: 10,
                     ),
-                 const   SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Expanded(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Container(
-                                    height: 50,
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.7,
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage(Images.inputBG),
-                                        fit: BoxFit.fill,
-                                      ),
-                                    ),
-                                    child: TextFormField(
-                                      controller: usercontroller,
-                                      validator: (value) {
-                                        if (value!.isEmpty) {
-                                          return 'enter your user name';
-                                        } else {
-                                          return null;
-                                        }
-                                      },
-                                      decoration: InputDecoration(
-                                        hintText: 'ຊື່ຜູ້ໃຊ້:',
-                                        border: InputBorder.none,
-                                        contentPadding: EdgeInsets.only(
-                                          left: 8,
-                                        ),
-                                      ),
-                                      maxLength: 30,
-                                    ),
-                                  ),
-                                ],
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 50,
+                              width: MediaQuery.of(context).size.width * 0.7,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(Images.inputBG),
+                                  fit: BoxFit.fill,
+                                ),
                               ),
-                              SizedBox(
-                                height: 30,
+                              child: TextFormField(
+                                controller: usercontroller,
+                                validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return 'enter your user name';
+                                  } else {
+                                    return null;
+                                  }
+                                },
+                                decoration: const InputDecoration(
+                                    hintText: "ຊື່ຜູ້ໃຊ້",
+                                    border: InputBorder.none,
+                                    contentPadding:
+                                        EdgeInsets.symmetric(horizontal: 16.0)),
                               ),
-                              Column(
-                                children: [
-                                  Container(
-                                    height: 50,
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.7,
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image: AssetImage(Images.inputBG),
-                                          fit: BoxFit.fill),
-                                    ),
-                                    child: TextFormField(
-                                      controller: passwordcontroller,
-                                      validator: (value) {
-                                        if (value!.isEmpty) {
-                                          return "enter your password";
-                                        } else {
-                                          return null;
-                                        }
-                                      },
-                                      decoration: InputDecoration(
-                                        focusedBorder: InputBorder.none,
-                                        hintText: 'ລະຫັດຜ່ານ:',
-                                        border: InputBorder.none,
-                                        contentPadding: EdgeInsets.only(
-                                          left: 8,
-                                        ),
-                                      ),
-                                      maxLength: 13,
-                                    ),
-                                  ),
-                                ],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              height: 50,
+                              width: MediaQuery.of(context).size.width * 0.7,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(Images.inputBG),
+                                    fit: BoxFit.fill),
                               ),
-                            ],
-                          ),
+                              child: TextFormField(
+                                controller: passwordcontroller,
+                                validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return "enter your password";
+                                  } else {
+                                    return null;
+                                  }
+                                },
+                                decoration: const InputDecoration(
+                                  focusedBorder: InputBorder.none,
+                                  hintText: "ລະຫັດຜ່ານ",
+                                  border: InputBorder.none,
+                                  contentPadding:
+                                      EdgeInsets.symmetric(horizontal: 16.0),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
-                 const   SizedBox(
+                    const SizedBox(
                       height: 50,
                     ),
                     InkWell(

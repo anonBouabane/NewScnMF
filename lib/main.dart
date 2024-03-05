@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:microfinance/helper/Routehelper.dart';
 import 'package:microfinance/util/Appcontants.dart';
-import 'package:microfinance/view/screen/dashboard/Loanscreen.dart';  
+import 'package:microfinance/view/screen/auth/signin_screen.dart';  
 
 final Map<String, WidgetBuilder> map = {
-  '/Marketing': (BuildContext context) => const LoanScreen(),
+  '/signinscreen': (BuildContext context) => const SignInScreen(),
 };
 String? initial;
 void main() {
