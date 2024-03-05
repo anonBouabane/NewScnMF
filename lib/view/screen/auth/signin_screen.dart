@@ -43,7 +43,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       height: 10,
                     ),
                     const SizedBox(
-                      height: 30,
+                      height: 10,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -52,6 +52,11 @@ class _SignInScreenState extends State<SignInScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
+                            Container(height: 50,width: 120,
+                              decoration:const BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(Images.icon_profile))),
+                            ),
                             Container(
                               height: 50,
                               width: MediaQuery.of(context).size.width * 0.7,

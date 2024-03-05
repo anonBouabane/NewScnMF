@@ -3,8 +3,7 @@ class Images {
   static const String LoGo = 'assets/images/Microfinance.png';
   static const String Background = 'assets/images/BG-01.png';
   static const String Background2 = 'assets/images/BG-02.png';
-  static const String Background3 = 'assets/images/BG-03.png';
-  static const String white_bg = 'assets/images/background_white.png';
+  static const String Background3 = 'assets/images/BG-03.png'; 
   static const String phoneprefixbox = 'assets/images/phone_prefix_box.png';
   static const String Login_btn = 'assets/images/login_btn.png';
   static const String profile = 'assets/images/profile_icon.png';
