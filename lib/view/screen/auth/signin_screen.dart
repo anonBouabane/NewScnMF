@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:microfinance/util/Textstyle.dart';
+import 'package:microfinance/util/colorstyle.dart';
 import 'package:microfinance/util/images.dart';
 import 'package:microfinance/view/screen/dashboard/widget/WidgwtLogo.dart';
 
@@ -52,8 +55,10 @@ class _SignInScreenState extends State<SignInScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Container(height: 50,width: 120,
-                              decoration:const BoxDecoration(
+                            Container(
+                              height: 50,
+                              width: 120,
+                              decoration: const BoxDecoration(
                                   image: DecorationImage(
                                       image: AssetImage(Images.icon_profile))),
                             ),
@@ -126,7 +131,36 @@ class _SignInScreenState extends State<SignInScreen> {
                           print('${user}');
                           print('${password}');
                         } else {
-                          return;
+                          showDialog(
+                              context: context,
+                              builder: (_) {
+                                return AlertDialog(
+                                  backgroundColor: normalcolors,
+                                  title: const Center(
+                                    child: Text(
+                                      "LOGIN FAIL",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                  content: Text(
+                                    "ກະລຸນາປ້ອນຊື່ ແລະ ລະຫັດຜ່ານໃຫ້ຖືກຕ້ອງ!",
+                                    style: textSubTitle,
+                                  ),
+                                  actions: <Widget>[
+                                    Center(
+                                      child: TextButton(
+                                        onPressed: () => Navigator.pop(context),
+                                        child: const Text(
+                                          "OK",
+                                          style: TextStyle(
+                                              fontSize: 20,
+                                              color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              });
                         }
                       },
                       child: Container(
