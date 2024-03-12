@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:microfinance/util/Textstyle.dart';
-import 'package:microfinance/util/colorstyle.dart';
+import 'package:microfinance/controller/authcontroller.dart';
 import 'package:microfinance/util/images.dart';
 import 'package:microfinance/view/screen/dashboard/widget/WidgwtLogo.dart';
+import 'package:provider/provider.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -100,6 +100,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               ),
                               child: TextFormField(
                                 controller: passwordcontroller,
+                                obscureText: true,
                                 validator: (value) {
                                   if (value!.isEmpty) {
                                     return "enter your password";
@@ -124,43 +125,18 @@ class _SignInScreenState extends State<SignInScreen> {
                       height: 50,
                     ),
                     InkWell(
-                      onTap: () {
-                        String user = usercontroller.text;
-                        String password = passwordcontroller.text;
+                      onTap: () async {
                         if (formkey.currentState!.validate()) {
-                          print('${user}');
-                          print('${password}');
-                        } else {
-                          showDialog(
-                              context: context,
-                              builder: (_) {
-                                return AlertDialog(
-                                  backgroundColor: normalcolors,
-                                  title: const Center(
-                                    child: Text(
-                                      "LOGIN FAIL",
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  ),
-                                  content: Text(
-                                    "ກະລຸນາປ້ອນຊື່ ແລະ ລະຫັດຜ່ານໃຫ້ຖືກຕ້ອງ!",
-                                    style: textSubTitle,
-                                  ),
-                                  actions: <Widget>[
-                                    Center(
-                                      child: TextButton(
-                                        onPressed: () => Navigator.pop(context),
-                                        child: const Text(
-                                          "OK",
-                                          style: TextStyle(
-                                              fontSize: 20,
-                                              color: Colors.white),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                );
-                              });
+                          final authcontroller = Provider.of<AuthController>(
+                              context,
+                              listen: false);
+                          final resp = await authcontroller.login(
+                              usercontroller.text, passwordcontroller.text);
+                          if (resp == true) {
+                            print("ok");
+                          } else {
+                            print("fail");
+                          }
                         }
                       },
                       child: Container(
