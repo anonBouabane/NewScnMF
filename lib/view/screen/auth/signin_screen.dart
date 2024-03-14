@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:microfinance/controller/authcontroller.dart';
+import 'package:microfinance/data/model/auth_model.dart';
 import 'package:microfinance/util/images.dart';
 import 'package:microfinance/view/screen/dashboard/widget/WidgwtLogo.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +14,7 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+  Authmodel model = Authmodel();
   TextEditingController usercontroller = TextEditingController();
   TextEditingController passwordcontroller = TextEditingController();
   final formkey = GlobalKey<FormState>();
@@ -74,7 +76,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               child: TextFormField(
                                 controller: usercontroller,
                                 validator: (value) {
-                                  if (value!.isEmpty) {
+                                  if (value == null || value.isEmpty) {
                                     return 'enter your user name';
                                   } else {
                                     return null;
@@ -102,7 +104,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 controller: passwordcontroller,
                                 obscureText: true,
                                 validator: (value) {
-                                  if (value!.isEmpty) {
+                                  if (value == null || value.isEmpty) {
                                     return "enter your password";
                                   } else {
                                     return null;
@@ -127,15 +129,17 @@ class _SignInScreenState extends State<SignInScreen> {
                     InkWell(
                       onTap: () async {
                         if (formkey.currentState!.validate()) {
+                          String user = usercontroller.text;
+                          String password = passwordcontroller.text;
                           final authcontroller = Provider.of<AuthController>(
                               context,
                               listen: false);
                           final resp = await authcontroller.login(
-                              usercontroller.text, passwordcontroller.text);
-                          if (resp == true) {
-                            print("ok");
+                               user,password);
+                          if (resp == true) { 
+                           
                           } else {
-                            print("fail");
+                            print("fail to login ==> $resp");
                           }
                         }
                       },

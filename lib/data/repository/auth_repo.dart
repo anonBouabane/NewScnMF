@@ -13,7 +13,7 @@ class AuthRepo {
           'Content-Type': 'application/json; charset=UTF-8',
         },
         body: jsonEncode(
-            <String, String>{username: username, password: password}));
+            <String, String>{"username": username, "password": password}));
     if (response.statusCode == 200) {
       return Authmodel.fromJson(json.decode(response.body));
     } else {

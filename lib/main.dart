@@ -3,10 +3,14 @@ import 'package:microfinance/controller/authcontroller.dart';
 import 'package:microfinance/helper/Routehelper.dart';
 import 'package:microfinance/util/Appcontants.dart';
 import 'package:microfinance/view/screen/auth/signin_screen.dart';
+import 'package:microfinance/view/screen/dashboard/Loanscreen.dart';
+import 'package:microfinance/view/screen/dashboard/Marketing_screen.dart';
 import 'package:provider/provider.dart';
 
 final Map<String, WidgetBuilder> map = {
   '/signinscreen': (BuildContext context) => const SignInScreen(),
+  '/marketing': (BuildContext context) => const Marketing(),
+  '/loan': (BuildContext context) => const LoanScreen(),
 };
 
 String? initial;

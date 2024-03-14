@@ -7,5 +7,5 @@ class Appconstants {
   static const String subtitle = "ສົມໃຈນຶກ";
 // API URL
   // ignore: constant_identifier_names
-  static const String LOGIN_URI = '{{uat_dev}}/autherize';
+  static const String LOGIN_URI = 'http://149.129.55.90:5050/autherize';
 }
