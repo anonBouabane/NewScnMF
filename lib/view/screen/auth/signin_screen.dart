@@ -19,6 +19,11 @@ class _SignInScreenState extends State<SignInScreen> {
   TextEditingController passwordcontroller = TextEditingController();
   final formkey = GlobalKey<FormState>();
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -134,12 +139,25 @@ class _SignInScreenState extends State<SignInScreen> {
                           final authcontroller = Provider.of<AuthController>(
                               context,
                               listen: false);
-                          final resp = await authcontroller.login(
-                               user,password);
-                          if (resp == true) { 
-                           
+                          final resp =
+                              await authcontroller.login(user, password);
+                          if (resp == resp) {
+                            print(' role id ==>> ${resp}');
+                            switch (resp) {
+                              
+                              case '5':
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context, '/marketing', (route) => false);
+
+                                break;
+                              case '4':
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context, '/loan', (route) => false);
+                                break;
+                              default:
+                            }
                           } else {
-                            print("fail to login ==> $resp");
+                            print('fail to login ');
                           }
                         }
                       },

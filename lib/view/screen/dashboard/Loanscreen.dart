@@ -136,7 +136,7 @@ class _LoanScreenState extends State<LoanScreen> {
                                 ),
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                       const SizedBox(
@@ -244,7 +244,7 @@ class _LoanScreenState extends State<LoanScreen> {
                                 MaterialPageRoute(
                                     builder: (context) =>
                                         const PerMissionLoan()));
-                           }),
+                          }),
                     ],
                   ),
                 ),

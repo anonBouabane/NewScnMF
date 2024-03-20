@@ -16,9 +16,7 @@ final Map<String, WidgetBuilder> map = {
 String? initial;
 void main() {
   initial = RouteHelper.initial;
-  runApp(MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => AuthController())],
-      child: const MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -26,11 +24,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: Appconstants.APPNAME,
-      routes: map,
-      debugShowCheckedModeBanner: false,
-      initialRoute: initial,
+    return MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => AuthController())],
+      child: MaterialApp(
+        title: Appconstants.APPNAME,
+        routes: map,
+        debugShowCheckedModeBanner: false,
+        initialRoute: initial,
+      ),
     );
   }
 }
