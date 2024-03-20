@@ -6,7 +6,7 @@ class AuthController extends ChangeNotifier {
   Future<String> login(String username, String password) async {
     Authmodel responsemodel = await AuthRepo().login(username, password);
     if (responsemodel.resultCode == 'OK') {
-      return '${responsemodel.roleId}' ;
+      return '${responsemodel.roleId}';
     } else {
       return 'fail to login ';
     }

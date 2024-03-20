@@ -141,8 +141,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               listen: false);
                           final resp =
                               await authcontroller.login(user, password);
-                          if (resp == resp) {
-                            print(' role id ==>> ${resp}');
+                          if (resp == resp) { 
                             switch (resp) {
                               
                               case '5':
