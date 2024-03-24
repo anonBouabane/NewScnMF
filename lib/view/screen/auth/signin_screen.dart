@@ -141,9 +141,8 @@ class _SignInScreenState extends State<SignInScreen> {
                               listen: false);
                           final resp =
                               await authcontroller.login(user, password);
-                          if (resp == resp) { 
+                          if (resp == resp) {
                             switch (resp) {
-                              
                               case '5':
                                 Navigator.pushNamedAndRemoveUntil(
                                     context, '/marketing', (route) => false);
