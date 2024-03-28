@@ -76,7 +76,7 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                               height: 5,
                             ),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Text(
                                   "ຮູບ",
@@ -133,16 +133,15 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                                 child: Column(
                                   children: [
                                     SizedBox(
-                                      height: 50,
+                                      height: 60,
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceAround,
                                         children: [
                                           const CircleAvatar(
-                                            radius: 20,
-                                            backgroundImage:
-                                                AssetImage(Images.LoGo),
-                                          ),
+                                              radius: 20,
+                                              backgroundImage: AssetImage(
+                                                  Images.icon_profile)),
                                           Text(getdata[index]
                                               .fullName
                                               .toString()),
