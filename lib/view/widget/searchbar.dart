@@ -23,6 +23,7 @@ class SearchItem extends StatelessWidget {
           height: 30,
           width: width,
           child:const SearchBar(
+            
             hintText: "ຄົ້ນຫາ",
           ),
         ),

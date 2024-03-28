@@ -131,6 +131,19 @@ class _SignInScreenState extends State<SignInScreen> {
                     const SizedBox(
                       height: 50,
                     ),
+                    Consumer<AuthController>(
+                      builder: (context, value, child) {
+                        if (value.msg.isNotEmpty &&
+                            value.msg.toString() != "") {
+                          return Text(
+                            value.msg.toString(),
+                            style: TextStyle(color: Colors.red),
+                          );
+                        } else {
+                          return Container();
+                        }
+                      },
+                    ),
                     InkWell(
                       onTap: () async {
                         if (formkey.currentState!.validate()) {

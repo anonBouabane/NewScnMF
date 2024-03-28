@@ -1,4 +1,4 @@
-class Data {
+class ShareData {
   static String token = '';
   static String userId = '';
   static String departId = '';
