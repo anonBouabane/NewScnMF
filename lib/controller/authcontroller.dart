@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart'; 
-import 'package:microfinance/data/model/GetInfocustoModel.dart';
+import 'package:flutter/material.dart';
 import 'package:microfinance/data/model/auth_model.dart';
 import 'package:microfinance/data/repository/auth_repo.dart';
 import 'package:microfinance/data/shared/shareperfer.dart';
@@ -7,14 +6,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthController extends ChangeNotifier {
   String msg = '';
-  bool isloading = false;
-  final authRepo = AuthRepo();
-  List<Getalldatamodel> _getalldata = [];
-  List<Getalldatamodel> get getalldata => _getalldata;
-  AuthController(){
-    getAlldatacusto();
-    notifyListeners();
-  }
 
   Future<String> login(String username, String password) async {
     Authmodel responsemodel = await AuthRepo().login(username, password);
@@ -43,19 +34,5 @@ class AuthController extends ChangeNotifier {
   Future<void> _shareprefer(String key, String value) async {
     final prefer = await SharedPreferences.getInstance();
     prefer.setString(key, value);
-  }
-
-  Future <void> getAlldatacusto() async {
-    isloading = true;
-    notifyListeners();
-    try {
-       final List<Getalldatamodel> response = await authRepo.getAllData(ShareData.token);
-    _getalldata = response;      
-    } catch (e) {
-      print("Error :$e ");
-      
-    }finally{  isloading = false;
-    notifyListeners();}
-   
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:microfinance/controller/authcontroller.dart';
+import 'package:microfinance/controller/getdatacontroller.dart';
 import 'package:microfinance/helper/Routehelper.dart';
 import 'package:microfinance/util/Appcontants.dart';
 import 'package:microfinance/view/screen/Informationcusto/information_custo.dart';
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (context) => AuthController())],
+      providers: [ChangeNotifierProvider(create: (_) => AuthController()),
+      ChangeNotifierProvider(create: (_)=>Getalldatacontroller())],
       child: MaterialApp(
         title: Appconstants.APPNAME,
         routes: map,

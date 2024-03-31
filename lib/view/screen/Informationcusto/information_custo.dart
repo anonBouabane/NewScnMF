@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:microfinance/controller/authcontroller.dart';
+import 'package:microfinance/controller/getdatacontroller.dart';
 import 'package:microfinance/util/Textstyle.dart';
 import 'package:microfinance/util/images.dart';
 import 'package:microfinance/view/screen/Informationcusto/InfoDetailCusto.dart';
@@ -19,7 +19,8 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      Provider.of<AuthController>(context, listen: false).getAlldatacusto();
+      Provider.of<Getalldatacontroller>(context, listen: false)
+          .getAlldatacusto();
     });
 
     super.initState();
@@ -106,57 +107,75 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                       SizedBox(
                         height: MediaQuery.of(context).size.height,
                         width: MediaQuery.of(context).size.width,
-                        child: Consumer<AuthController>(
+                        child: Consumer<Getalldatacontroller>(
                             builder: (context, value, child) {
                           if (value.isloading) {
                             return const Center(
                                 child: CircularProgressIndicator());
                           }
                           final getdata = value.getalldata;
-                          return ListView.separated(
-                            physics: const AlwaysScrollableScrollPhysics(),
-                            scrollDirection: Axis.vertical,
-                            shrinkWrap: true,
-                            itemCount: getdata.length,
-                            separatorBuilder: (context, index) {
-                              return const Divider();
-                            },
-                            itemBuilder: (context, index) {
-                              return GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const DetailInfoCusto()));
-                                },
-                                child: Column(
-                                  children: [
-                                    SizedBox(
-                                      height: 60,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          const CircleAvatar(
-                                              radius: 20,
-                                              backgroundImage: AssetImage(
-                                                  Images.icon_profile)),
-                                          Text(getdata[index]
-                                              .fullName
-                                              .toString()),
-                                          Text(getdata[index].age.toString()),
-                                          Text(getdata[index]
-                                              .phoneNumber
-                                              .toString()),
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              );
-                            },
-                          );
+                          return getdata.isNotEmpty
+                              ? RefreshIndicator(
+                                  onRefresh: () async {
+                                    await Future.delayed(
+                                        const Duration(seconds: 1));
+                                    Getalldatacontroller().refreshdata();
+                                  },
+                                  child: ListView.separated(
+                                    physics:
+                                        const AlwaysScrollableScrollPhysics(),
+                                    scrollDirection: Axis.vertical,
+                                    shrinkWrap: true,
+                                    itemCount: getdata.length,
+                                    separatorBuilder: (context, index) {
+                                      return const Divider();
+                                    },
+                                    itemBuilder: (context, index) {
+                                      return GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const DetailInfoCusto()));
+                                        },
+                                        child: Column(
+                                          children: [
+                                            SizedBox(
+                                              height: 60,
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceAround,
+                                                children: [
+                                                  const CircleAvatar(
+                                                      radius: 20,
+                                                      backgroundImage:
+                                                          AssetImage(Images
+                                                              .icon_profile)),
+                                                  Text(getdata[index]
+                                                      .fullName
+                                                      .toString()),
+                                                  Text(getdata[index]
+                                                      .age
+                                                      .toString()),
+                                                  Text(getdata[index]
+                                                      .phoneNumber
+                                                      .toString()),
+                                                ],
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                )
+                              : const SizedBox(
+                                  child: Center(
+                                    child: Text("ບໍ່ມີລາຍການສະແດງ"),
+                                  ),
+                                );
                         }),
                       ),
                     ],
