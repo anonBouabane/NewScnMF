@@ -54,7 +54,7 @@ class _DetailInfoCustoState extends State<DetailInfoCusto> {
                           ),
                           Text(
                             'ຊື່ລູກຄ້າ',
-                            style: regulardark,
+                            style: regularbold,
                           ),
                           const SizedBox(
                             height: 10,
@@ -64,11 +64,11 @@ class _DetailInfoCustoState extends State<DetailInfoCusto> {
                             children: [
                               Text(
                                 "ອາຍຸ :  ",
-                                style: regulardark,
+                                style: regularbold,
                               ),
                               Text(
                                 "ເຮືອນເລກທີ :  ",
-                                style: regulardark,
+                                style: regularbold,
                               ),
                             ],
                           ),
@@ -77,11 +77,11 @@ class _DetailInfoCustoState extends State<DetailInfoCusto> {
                             children: [
                               Text(
                                 "ເບີໂທ :  ",
-                                style: regulardark,
+                                style: regularbold,
                               ),
                               Text(
                                 "ຫນ່ວຍ :  ",
-                                style: regulardark,
+                                style: regularbold,
                               ),
                             ],
                           ),
@@ -90,11 +90,11 @@ class _DetailInfoCustoState extends State<DetailInfoCusto> {
                             children: [
                               Text(
                                 "ເບີວັອດແອັບ :  ",
-                                style: regulardark,
+                                style: regularbold,
                               ),
                               Text(
                                 "ບ້ານ :  ",
-                                style: regulardark,
+                                style: regularbold,
                               ),
                             ],
                           ),
@@ -103,11 +103,11 @@ class _DetailInfoCustoState extends State<DetailInfoCusto> {
                             children: [
                               Text(
                                 "ອາຊີບ : ",
-                                style: regulardark,
+                                style: regularbold,
                               ),
                               Text(
                                 "ເມືອງ :  ",
-                                style: regulardark,
+                                style: regularbold,
                               ),
                             ],
                           ),
@@ -116,11 +116,11 @@ class _DetailInfoCustoState extends State<DetailInfoCusto> {
                             children: [
                               Text(
                                 "ສະຖານທີ່ເຮັດວຽກ : ",
-                                style: regulardark,
+                                style: regularbold,
                               ),
                               Text(
                                 "ແຂວງ : ",
-                                style: regulardark,
+                                style: regularbold,
                               ),
                             ],
                           ),
@@ -133,15 +133,15 @@ class _DetailInfoCustoState extends State<DetailInfoCusto> {
                             children: [
                               Text(
                                 "ເລກບັດປະຈຳຕົວ",
-                                style: regulardark,
+                                style: regularbold,
                               ),
                               Text(
                                 "ວັນທີອອກບັດປະຈຳຕົວ",
-                                style: regulardark,
+                                style: regularbold,
                               ),
                               Text(
                                 "ວັນທີຫມົດອາຍຸ",
-                                style: regulardark,
+                                style: regularbold,
                               ),
                             ],
                           ),
@@ -153,15 +153,15 @@ class _DetailInfoCustoState extends State<DetailInfoCusto> {
                             children: [
                               Text(
                                 "01/05/2003",
-                                style: regulardark,
+                                style: regularbold,
                               ),
                               Text(
                                 "01-05-04",
-                                style: regulardark,
+                                style: regularbold,
                               ),
                               Text(
                                 "01-05-03",
-                                style: regulardark,
+                                style: regularbold,
                               ),
                             ],
                           ),

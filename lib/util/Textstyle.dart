@@ -30,7 +30,7 @@ final normal = TextStyle(
   fontWeight: FontWeight.bold,
   color: Color.fromARGB(255, 8, 62, 179),
 );
-final regulardark = TextStyle(
+final regularbold = TextStyle(
   fontFamily: "Roboto",
   fontSize: 17,
   fontWeight: FontWeight.w900,

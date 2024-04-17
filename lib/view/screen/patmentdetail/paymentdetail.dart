@@ -62,27 +62,27 @@ class _PaymentDetailState extends State<PaymentDetail> {
                         children: [
                           Text(
                             "ລຳດັບ",
-                            style: regulardark,
+                            style: regularbold,
                           ),
                           Text(
                             "ຊື່ລູກຄ້າ",
-                            style: regulardark,
+                            style: regularbold,
                           ),
                           Text(
                             "ເບີໂທ",
-                            style: regulardark,
+                            style: regularbold,
                           ),
                           Text(
                             "ມູນຄ່າຢືມ",
-                            style: regulardark,
+                            style: regularbold,
                           ),
                           Text(
                             "ສະກຸນເງິນ",
-                            style: regulardark,
+                            style: regularbold,
                           ),
                           Text(
                             "ສະຖານະ",
-                            style: regulardark,
+                            style: regularbold,
                           )
                         ],
                       ),

@@ -64,19 +64,19 @@ class _RequestLoanscreenState extends State<RequestLoanscreen> {
                         children: [
                           Text(
                             "ຮູບ",
-                            style: regulardark,
+                            style: regularbold,
                           ),
                           Text(
                             "ຊື່ລູກຄ້າ",
-                            style: regulardark,
+                            style: regularbold,
                           ),
                           Text(
                             "ອາຍຸ",
-                            style: regulardark,
+                            style: regularbold,
                           ),
                           Text(
                             "ເບີໂທ",
-                            style: regulardark,
+                            style: regularbold,
                           )
                         ],
                       ),

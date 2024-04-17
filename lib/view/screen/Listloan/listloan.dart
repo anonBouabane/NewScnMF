@@ -60,19 +60,19 @@ class _ListloanState extends State<Listloan> {
                         children: [
                           Text(
                             "ຮູບ",
-                            style: regulardark,
+                            style: regularbold,
                           ),
                           Text(
                             "ຊື່ລູກຄ້າ",
-                            style: regulardark,
+                            style: regularbold,
                           ),
                           Text(
                             "ເບີໂທ",
-                            style: regulardark,
+                            style: regularbold,
                           ),
                           Text(
                             "ສະຖານະ",
-                            style: regulardark,
+                            style: regularbold,
                           )
                         ],
                       ),
