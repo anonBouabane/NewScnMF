@@ -35,24 +35,24 @@ class _RegisterCustoState extends State<RegisterCusto> {
         child: Container(
           height: double.infinity,
           width: double.infinity,
-          decoration: BoxDecoration(
+          decoration:const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(Images.Background3), fit: BoxFit.fill),
           ),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(
+               const SizedBox(
                   height: 25,
                 ),
-                LogoWidget(),
-                SizedBox(
+               const LogoWidget(),
+             const   SizedBox(
                   height: 10,
                 ),
                 Card(
                   child: Column(
                     children: [
-                      Container(
+                      SizedBox(
                         child: Text(
                           "ລົງທະບຽນຂໍ້ມູນລູກຄ້າ",
                           style: textheaderTitle,
@@ -63,7 +63,7 @@ class _RegisterCustoState extends State<RegisterCusto> {
                           Row(
                             children: [
                               Container(
-                                margin: EdgeInsets.only(top: 30),
+                                margin:const EdgeInsets.only(top: 30),
                                 height: 90,
                                 width: MediaQuery.of(context).size.width / 4,
                                 child: IconButton(
@@ -95,14 +95,14 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                             style: regular,
                                           ),
                                           Radio(
-                                            activeColor: Color.fromARGB(
+                                            activeColor:const Color.fromARGB(
                                                 255, 15, 106, 180),
                                             value: 1,
                                             groupValue: selectedvalue,
                                             onChanged: (value) => setState(
                                                 () => selectedvalue = 1),
                                           ),
-                                          SizedBox(
+                                        const  SizedBox(
                                             height: 20,
                                           )
                                         ],
@@ -114,14 +114,14 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                             style: regular,
                                           ),
                                           Radio(
-                                            activeColor: Color.fromARGB(
+                                            activeColor:const Color.fromARGB(
                                                 255, 15, 106, 180),
                                             value: 2,
                                             groupValue: selectedvalue,
                                             onChanged: (value) => setState(
                                                 () => selectedvalue = 2),
                                           ),
-                                          SizedBox(
+                                        const  SizedBox(
                                             height: 20,
                                           )
                                         ],
@@ -244,15 +244,15 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                 style: regular,
                               ),
                               Expanded(
-                                child: Container(
+                                child: SizedBox(
                                   height: 50,
                                   child: DropdownButtonFormField(
-                                    decoration: InputDecoration(
+                                    decoration:const InputDecoration(
                                         border: InputBorder.none,
                                         contentPadding:
                                             EdgeInsets.only(left: 10)),
                                     value: dropdowncity,
-                                    icon: Icon(
+                                    icon:const Icon(
                                       Icons.keyboard_arrow_down,
                                       color: regularColor,
                                     ),
@@ -278,15 +278,15 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                 style: regular,
                               ),
                               Expanded(
-                                child: Container(
+                                child: SizedBox(
                                   height: 50,
                                   child: DropdownButtonFormField(
-                                    decoration: InputDecoration(
+                                    decoration:const InputDecoration(
                                         border: InputBorder.none,
                                         contentPadding:
                                             EdgeInsets.only(left: 10)),
                                     value: dropdownprovince,
-                                    icon: Icon(
+                                    icon:const Icon(
                                       Icons.keyboard_arrow_down,
                                       color: regularColor,
                                     ),
@@ -313,7 +313,7 @@ class _RegisterCustoState extends State<RegisterCusto> {
                             children: [
                               Column(
                                 children: [
-                                  Container(
+                                  SizedBox(
                                     height: 70,
                                     width:
                                         MediaQuery.of(context).size.width / 5,
@@ -396,7 +396,7 @@ class _RegisterCustoState extends State<RegisterCusto> {
                             children: [
                               Column(
                                 children: [
-                                  Container(
+                                  SizedBox(
                                     height: 70,
                                     width:
                                         MediaQuery.of(context).size.width / 5,
@@ -478,27 +478,26 @@ class _RegisterCustoState extends State<RegisterCusto> {
                         ],
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height / 12,
                         width: MediaQuery.of(context).size.width,
                       ),
                     ],
                   ),
-                )
+                ),
+                InkWell(
+                    onTap: () {
+                      print('data');
+                    },
+                    child: Container(
+                      height: 90,
+                      width: MediaQuery.of(context).size.width / 1.2,
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage(Images.Record_icon))),
+                    )),
               ],
             ),
           ),
         ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        child: InkWell(
-            onTap: () {},
-            child: Container(
-              width: MediaQuery.of(context).size.width / 2,
-              decoration: BoxDecoration(
-                  image:
-                      DecorationImage(image: AssetImage(Images.Record_icon))),
-            )),
-        color: regularColor,
       ),
     );
   }

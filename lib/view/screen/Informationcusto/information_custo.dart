@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:microfinance/controller/getdatacontroller.dart';
 import 'package:microfinance/util/Textstyle.dart';
-import 'package:microfinance/util/images.dart';
-import 'package:microfinance/view/screen/Informationcusto/InfoDetailCusto.dart';
+import 'package:microfinance/util/colorstyle.dart';
+import 'package:microfinance/util/images.dart'; 
 import 'package:microfinance/view/screen/dashboard/widget/WidgwtLogo.dart';
 import 'package:microfinance/view/widget/bottomappbar.dart';
-import 'package:microfinance/view/widget/searchbar.dart';
 import 'package:provider/provider.dart';
 
 class InfoCustoScreen extends StatefulWidget {
@@ -19,8 +18,7 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      Provider.of<Getalldatacontroller>(context, listen: false)
-          .getAlldatacusto();
+      Provider.of<Getalldatacontroller>(context, listen: false);
     });
 
     super.initState();
@@ -65,10 +63,19 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    SearchItem(
-                                        width:
-                                            MediaQuery.of(context).size.width /
-                                                2.2)
+                                    const Icon(
+                                      Icons.search,
+                                      color: normalcolors,
+                                    ),
+                                    SizedBox(
+                                      height: 30,
+                                      width: MediaQuery.of(context).size.width /
+                                          2.2,
+                                      child: SearchBar(
+                                        onChanged: (value) {},
+                                        hintText: "ຄົ້ນຫາ",
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ],
@@ -133,11 +140,7 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                                     itemBuilder: (context, index) {
                                       return GestureDetector(
                                         onTap: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const DetailInfoCusto()));
+                                          Navigator.pushNamed(context,'infodetailcusto',arguments: getdata[index].customerId);
                                         },
                                         child: Column(
                                           children: [

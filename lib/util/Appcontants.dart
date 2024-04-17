@@ -11,4 +11,6 @@ class Appconstants {
   // get all data custo
   static const String getallinfocusto =
       'http://149.129.55.90:5050/loan/customer';
+      // get user by id 
+  static const String getuserbyid = 'http://149.129.55.90:5050/loan/customer';
 }

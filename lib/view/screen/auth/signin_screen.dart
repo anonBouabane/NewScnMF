@@ -154,23 +154,20 @@ class _SignInScreenState extends State<SignInScreen> {
                               listen: false);
                           final resp =
                               await authcontroller.login(user, password);
-                          if (resp == resp) {
-                            switch (resp) {
-                              case '5':
-                                Navigator.pushNamedAndRemoveUntil(
-                                    context, '/marketing', (route) => false);
 
-                                break;
-                              case '4':
-                                Navigator.pushNamedAndRemoveUntil(
-                                    context, '/loan', (route) => false);
-                                break;
-                              default:
-                            }
-                          } else {
-                            print('fail to login ');
+                          switch (resp) {
+                            case '5':
+                              Navigator.pushNamedAndRemoveUntil(
+                                  context, '/marketing', (route) => false);
+
+                              break;
+                            case '4':
+                              Navigator.pushNamedAndRemoveUntil(
+                                  context, '/loan', (route) => false);
+                              break;
+                            default:
                           }
-                        }
+                        } 
                       },
                       child: Container(
                         height: 60,

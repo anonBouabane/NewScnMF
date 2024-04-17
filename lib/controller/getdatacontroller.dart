@@ -8,9 +8,13 @@ class Getalldatacontroller extends ChangeNotifier {
   final getdatarepo = Getalldatarepo();
   List<Getalldatamodel> _getalldata = [];
   List<Getalldatamodel> get getalldata => _getalldata;
+
+  List<Getalldatamodel> _getuserByid = [];
+  List<Getalldatamodel> get getuserByid => _getuserByid;
+
   Getalldatacontroller() {
     getAlldatacusto();
-    notifyListeners();
+    getuserBYID('2');
   }
 
   Future<void> getAlldatacusto() async {
@@ -21,15 +25,31 @@ class Getalldatacontroller extends ChangeNotifier {
           await getdatarepo.getAllData(ShareData.token);
       _getalldata = response;
     } catch (e) {
-      print("Error :$e ");
+      print('error ===>> ${e}');
+      throw e.toString();
     } finally {
       isloading = false;
       notifyListeners();
     }
   }
-  refreshdata(){
-    getAlldatacusto();
+
+  Future<Getalldatamodel> getuserBYID(String id) async {
+    isloading = true;
     notifyListeners();
+    try {
+      final List<Getalldatamodel> response =
+          await getdatarepo.getuserBYID(ShareData.token, id);
+      _getuserByid = response;
+      return Getalldatamodel();
+    } catch (e) {
+      throw e.toString();
+    } finally {
+      isloading = false;
+      notifyListeners();
+    }
   }
- 
+
+  Future<void> refreshdata() async {
+    await getAlldatacusto();
+  }
 }

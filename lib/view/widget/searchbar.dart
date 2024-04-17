@@ -15,7 +15,7 @@ class SearchItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(
+      const  Icon(
           Icons.search,
           color: normalcolors,
         ),
