@@ -33,14 +33,13 @@ class Getalldatacontroller extends ChangeNotifier {
     }
   }
 
-  Future<Getalldatamodel> getuserBYID(String id) async {
+  Future<void> getuserBYID(String id) async {
     isloading = true;
     notifyListeners();
     try {
       final List<Getalldatamodel> response =
           await getdatarepo.getuserBYID(ShareData.token, id);
       _getuserByid = response;
-      return Getalldatamodel();
     } catch (e) {
       throw e.toString();
     } finally {

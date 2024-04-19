@@ -35,18 +35,18 @@ class _RegisterCustoState extends State<RegisterCusto> {
         child: Container(
           height: double.infinity,
           width: double.infinity,
-          decoration:const BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(Images.Background3), fit: BoxFit.fill),
           ),
           child: SingleChildScrollView(
             child: Column(
               children: [
-               const SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
-               const LogoWidget(),
-             const   SizedBox(
+                const LogoWidget(),
+                const SizedBox(
                   height: 10,
                 ),
                 Card(
@@ -63,7 +63,7 @@ class _RegisterCustoState extends State<RegisterCusto> {
                           Row(
                             children: [
                               Container(
-                                margin:const EdgeInsets.only(top: 30),
+                                margin: const EdgeInsets.only(top: 30),
                                 height: 90,
                                 width: MediaQuery.of(context).size.width / 4,
                                 child: IconButton(
@@ -95,14 +95,14 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                             style: regular,
                                           ),
                                           Radio(
-                                            activeColor:const Color.fromARGB(
+                                            activeColor: const Color.fromARGB(
                                                 255, 15, 106, 180),
                                             value: 1,
                                             groupValue: selectedvalue,
                                             onChanged: (value) => setState(
                                                 () => selectedvalue = 1),
                                           ),
-                                        const  SizedBox(
+                                          const SizedBox(
                                             height: 20,
                                           )
                                         ],
@@ -114,14 +114,14 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                             style: regular,
                                           ),
                                           Radio(
-                                            activeColor:const Color.fromARGB(
+                                            activeColor: const Color.fromARGB(
                                                 255, 15, 106, 180),
                                             value: 2,
                                             groupValue: selectedvalue,
                                             onChanged: (value) => setState(
                                                 () => selectedvalue = 2),
                                           ),
-                                        const  SizedBox(
+                                          const SizedBox(
                                             height: 20,
                                           )
                                         ],
@@ -247,12 +247,12 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                 child: SizedBox(
                                   height: 50,
                                   child: DropdownButtonFormField(
-                                    decoration:const InputDecoration(
+                                    decoration: const InputDecoration(
                                         border: InputBorder.none,
                                         contentPadding:
                                             EdgeInsets.only(left: 10)),
                                     value: dropdowncity,
-                                    icon:const Icon(
+                                    icon: const Icon(
                                       Icons.keyboard_arrow_down,
                                       color: regularColor,
                                     ),
@@ -281,12 +281,12 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                 child: SizedBox(
                                   height: 50,
                                   child: DropdownButtonFormField(
-                                    decoration:const InputDecoration(
+                                    decoration: const InputDecoration(
                                         border: InputBorder.none,
                                         contentPadding:
                                             EdgeInsets.only(left: 10)),
                                     value: dropdownprovince,
-                                    icon:const Icon(
+                                    icon: const Icon(
                                       Icons.keyboard_arrow_down,
                                       color: regularColor,
                                     ),
@@ -485,7 +485,35 @@ class _RegisterCustoState extends State<RegisterCusto> {
                 ),
                 InkWell(
                     onTap: () {
-                      print('data');
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Center(
+                                child: Text(
+                                  'success',
+                                  style: textheaderTitle,
+                                ),
+                              ),icon:const Icon(Icons.turned_in_sharp,size: 50.0,),
+                              content: Row(mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'register success fully',
+                                    style: regularbold,
+                                  ),
+                                ],
+                              ), 
+                              actions: [
+                                Center(
+                                  child: TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: Text('ok',style: textheaderTitle,)),
+                                )
+                              ],
+                            );
+                          });
                     },
                     child: Container(
                       height: 90,

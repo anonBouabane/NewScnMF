@@ -137,7 +137,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             value.msg.toString() != "") {
                           return Text(
                             value.msg.toString(),
-                            style: TextStyle(color: Colors.red),
+                            style: const TextStyle(color: Colors.red),
                           );
                         } else {
                           return Container();
@@ -167,7 +167,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               break;
                             default:
                           }
-                        } 
+                        }
                       },
                       child: Container(
                         height: 60,

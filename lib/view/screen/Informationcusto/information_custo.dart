@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:microfinance/controller/getdatacontroller.dart';
 import 'package:microfinance/util/Textstyle.dart';
 import 'package:microfinance/util/colorstyle.dart';
-import 'package:microfinance/util/images.dart'; 
+import 'package:microfinance/util/images.dart';
 import 'package:microfinance/view/screen/dashboard/widget/WidgwtLogo.dart';
 import 'package:microfinance/view/widget/bottomappbar.dart';
 import 'package:provider/provider.dart';
@@ -115,71 +115,75 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                         height: MediaQuery.of(context).size.height,
                         width: MediaQuery.of(context).size.width,
                         child: Consumer<Getalldatacontroller>(
-                            builder: (context, value, child) {
-                          if (value.isloading) {
-                            return const Center(
-                                child: CircularProgressIndicator());
-                          }
-                          final getdata = value.getalldata;
-                          return getdata.isNotEmpty
-                              ? RefreshIndicator(
-                                  onRefresh: () async {
-                                    await Future.delayed(
-                                        const Duration(seconds: 1));
-                                    Getalldatacontroller().refreshdata();
-                                  },
-                                  child: ListView.separated(
-                                    physics:
-                                        const AlwaysScrollableScrollPhysics(),
-                                    scrollDirection: Axis.vertical,
-                                    shrinkWrap: true,
-                                    itemCount: getdata.length,
-                                    separatorBuilder: (context, index) {
-                                      return const Divider();
+                          builder: (context, value, child) {
+                            if (value.isloading) {
+                              return const Center(
+                                  child: CircularProgressIndicator());
+                            }
+                            final getdata = value.getalldata;
+                            return getdata.isNotEmpty
+                                ? RefreshIndicator(
+                                    onRefresh: () async {
+                                      await Future.delayed(
+                                          const Duration(seconds: 1));
+                                      Getalldatacontroller().refreshdata();
                                     },
-                                    itemBuilder: (context, index) {
-                                      return GestureDetector(
-                                        onTap: () {
-                                          Navigator.pushNamed(context,'infodetailcusto',arguments: getdata[index].customerId);
-                                        },
-                                        child: Column(
-                                          children: [
-                                            SizedBox(
-                                              height: 60,
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceAround,
-                                                children: [
-                                                  const CircleAvatar(
-                                                      radius: 20,
-                                                      backgroundImage:
-                                                          AssetImage(Images
-                                                              .icon_profile)),
-                                                  Text(getdata[index]
-                                                      .fullName
-                                                      .toString()),
-                                                  Text(getdata[index]
-                                                      .age
-                                                      .toString()),
-                                                  Text(getdata[index]
-                                                      .phoneNumber
-                                                      .toString()),
-                                                ],
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                )
-                              : const SizedBox(
-                                  child: Center(
-                                    child: Text("ບໍ່ມີລາຍການສະແດງ"),
-                                  ),
-                                );
-                        }),
+                                    child: ListView.separated(
+                                      physics:
+                                          const AlwaysScrollableScrollPhysics(),
+                                      scrollDirection: Axis.vertical,
+                                      shrinkWrap: true,
+                                      itemCount: getdata.length,
+                                      separatorBuilder: (context, index) {
+                                        return const Divider();
+                                      },
+                                      itemBuilder: (context, index) {
+                                        return GestureDetector(
+                                          onTap: () {
+                                            Navigator.pushNamed(
+                                                context, 'infodetailcusto',
+                                                arguments:
+                                                    getdata[index].customerId);
+                                          },
+                                          child: Column(
+                                            children: [
+                                              SizedBox(
+                                                height: 60,
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceAround,
+                                                  children: [
+                                                    const CircleAvatar(
+                                                        radius: 20,
+                                                        backgroundImage:
+                                                            AssetImage(Images
+                                                                .icon_profile)),
+                                                    Text(getdata[index]
+                                                        .fullName
+                                                        .toString()),
+                                                    Text(getdata[index]
+                                                        .age
+                                                        .toString()),
+                                                    Text(getdata[index]
+                                                        .phoneNumber
+                                                        .toString()),
+                                                  ],
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  )
+                                : const SizedBox(
+                                    child: Center(
+                                      child: Text("ບໍ່ມີລາຍການສະແດງ"),
+                                    ),
+                                  );
+                          },
+                        ),
                       ),
                     ],
                   ),
