@@ -8,7 +8,7 @@ class WidgetBottomNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(height: 65,
-      color: regularColor,
+      color: darkblue,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:microfinance/data/model/auth_model.dart';
-import 'package:microfinance/data/repository/auth_repo.dart';
+import 'package:microfinance/data/repository/authrepo.dart';
 import 'package:microfinance/data/shared/shareperfer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

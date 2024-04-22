@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:microfinance/data/model/GetInfocustoModel.dart';
+import 'package:flutter/material.dart'; 
+import 'package:microfinance/data/model/getInfocusto_model.dart';
 import 'package:microfinance/data/repository/getdatarepo.dart';
 import 'package:microfinance/data/shared/shareperfer.dart';
 

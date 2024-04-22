@@ -65,7 +65,7 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                                   children: [
                                     const Icon(
                                       Icons.search,
-                                      color: normalcolors,
+                                      color: lightblue,
                                     ),
                                     SizedBox(
                                       height: 30,

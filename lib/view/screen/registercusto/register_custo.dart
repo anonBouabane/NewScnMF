@@ -254,7 +254,7 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                     value: dropdowncity,
                                     icon: const Icon(
                                       Icons.keyboard_arrow_down,
-                                      color: regularColor,
+                                      color: darkblue,
                                     ),
                                     items: items.map((String items) {
                                       return DropdownMenuItem(
@@ -288,7 +288,7 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                     value: dropdownprovince,
                                     icon: const Icon(
                                       Icons.keyboard_arrow_down,
-                                      color: regularColor,
+                                      color: darkblue,
                                     ),
                                     items: items.map((String items) {
                                       return DropdownMenuItem(
@@ -494,22 +494,31 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                   'success',
                                   style: textheaderTitle,
                                 ),
-                              ),icon:const Icon(Icons.turned_in_sharp,size: 50.0,),
-                              content: Row(mainAxisAlignment: MainAxisAlignment.center,
+                              ),
+                              icon: const Icon(
+                                Icons.check,
+                                size: 50.0,
+                                color: Colors.green,
+                              ),
+                              content: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
                                     'register success fully',
                                     style: regularbold,
                                   ),
                                 ],
-                              ), 
+                              ),
                               actions: [
                                 Center(
                                   child: TextButton(
                                       onPressed: () {
                                         Navigator.of(context).pop();
                                       },
-                                      child: Text('ok',style: textheaderTitle,)),
+                                      child: Text(
+                                        'ok',
+                                        style: textheaderTitle,
+                                      )),
                                 )
                               ],
                             );

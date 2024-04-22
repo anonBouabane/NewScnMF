@@ -9,7 +9,7 @@ class AuthRepo {
   Future<Authmodel> login(String username, String password) async {
     try {
       final http.Response response = await http.post(
-          Uri.parse('${Appconstants.LOGIN_URI.toString()}/login'),
+          Uri.parse('${Appconstants.LOGIN_URI}/login'),
           headers: <String, String>{
             'Content-Type': 'application/json; charset=UTF-8',
           },

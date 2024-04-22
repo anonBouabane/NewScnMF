@@ -13,4 +13,5 @@ class Appconstants {
       'http://149.129.55.90:5050/loan/customer';
       // get user by id 
   static const String getuserbyid = 'http://149.129.55.90:5050/loan/customer';
+  static const String registerCustomer = 'http://149.129.55.90:5050/loan/customer';
 }
