@@ -15,14 +15,14 @@ import 'package:microfinance/view/screen/requestLoan.dart/reqloan_screen.dart';
 import 'package:microfinance/view/screen/dashboard/widget/Functiondashboard.dart';
 import 'package:microfinance/view/screen/dashboard/widget/WidgwtLogo.dart';
 
-class LoanScreen extends StatefulWidget {
-  const LoanScreen({super.key});
+class CreditScreen extends StatefulWidget {
+  const CreditScreen({super.key});
 
   @override
-  State<LoanScreen> createState() => _LoanScreenState();
+  State<CreditScreen> createState() => _CreditScreenState();
 }
 
-class _LoanScreenState extends State<LoanScreen> {
+class _CreditScreenState extends State<CreditScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

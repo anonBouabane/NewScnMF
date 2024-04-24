@@ -3,6 +3,7 @@ import 'package:microfinance/controller/getdatacontroller.dart';
 import 'package:microfinance/util/Textstyle.dart';
 import 'package:microfinance/util/colorstyle.dart';
 import 'package:microfinance/util/images.dart';
+import 'package:microfinance/view/screen/Informationcusto/InfoDetailCusto.dart';
 import 'package:microfinance/view/screen/dashboard/widget/WidgwtLogo.dart';
 import 'package:microfinance/view/widget/bottomappbar.dart';
 import 'package:provider/provider.dart';
@@ -138,12 +139,14 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                                         return const Divider();
                                       },
                                       itemBuilder: (context, index) {
+                                        final user = getdata[index];
                                         return GestureDetector(
                                           onTap: () {
-                                            Navigator.pushNamed(
-                                                context, 'infodetailcusto',
-                                                arguments:
-                                                    getdata[index].customerId);
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        Detailcustomer(
+                                                            user: user)));
                                           },
                                           child: Column(
                                             children: [
