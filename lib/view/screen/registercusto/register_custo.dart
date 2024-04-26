@@ -32,13 +32,8 @@ class _RegisterCustoState extends State<RegisterCusto> {
         onTap: () {
           FocusScope.of(context).unfocus();
         },
-        child: Container(
-          height: double.infinity,
-          width: double.infinity,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(Images.Background3), fit: BoxFit.fill),
-          ),
+        child: Container(color: Stycolors.background,
+          
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -72,12 +67,38 @@ class _RegisterCustoState extends State<RegisterCusto> {
                               ),
                               Column(
                                 children: [
-                                  Text("ຊື່ ແລະ ນາມສະກຸນ ລູກຄ້າ",
-                                      style: regular),
-                                  WidgetFormfield(
-                                    width:
-                                        MediaQuery.of(context).size.width / 1.5,
-                                    keyboardtype: TextInputType.text,
+                                  Row(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Text(
+                                            'ຊື່',
+                                            style: regular,
+                                          ),
+                                          WidgetFormfield(
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width /
+                                                3,
+                                            keyboardtype: TextInputType.text,
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        children: [
+                                          Text(
+                                            'ນາມສະກຸນ',
+                                            style: regular,
+                                          ),
+                                          WidgetFormfield(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width /
+                                                  3,
+                                              keyboardtype: TextInputType.text),
+                                        ],
+                                      ),
+                                    ],
                                   ),
                                   Row(
                                     children: [
@@ -239,40 +260,7 @@ class _RegisterCustoState extends State<RegisterCusto> {
                           ),
                           Row(
                             children: [
-                              Text(
-                                'ເມຶອງ',
-                                style: regular,
-                              ),
-                              Expanded(
-                                child: SizedBox(
-                                  height: 50,
-                                  child: DropdownButtonFormField(
-                                    decoration: const InputDecoration(
-                                        border: InputBorder.none,
-                                        contentPadding:
-                                            EdgeInsets.only(left: 10)),
-                                    value: dropdowncity,
-                                    icon: const Icon(
-                                      Icons.keyboard_arrow_down,
-                                      color: darkblue,
-                                    ),
-                                    items: items.map((String items) {
-                                      return DropdownMenuItem(
-                                        value: items,
-                                        child: Text(
-                                          items,
-                                          style: regular,
-                                        ),
-                                      );
-                                    }).toList(),
-                                    onChanged: (String? newValue) {
-                                      setState(() {
-                                        dropdowncity = newValue!;
-                                      });
-                                    },
-                                  ),
-                                ),
-                              ),
+                             
                               Text(
                                 'ແຂວງ',
                                 style: regular,
@@ -288,7 +276,7 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                     value: dropdownprovince,
                                     icon: const Icon(
                                       Icons.keyboard_arrow_down,
-                                      color: darkblue,
+                                      color: Stycolors.darkblue,
                                     ),
                                     items: items.map((String items) {
                                       return DropdownMenuItem(
@@ -302,6 +290,40 @@ class _RegisterCustoState extends State<RegisterCusto> {
                                     onChanged: (String? newValue) {
                                       setState(() {
                                         dropdownprovince = newValue!;
+                                      });
+                                    },
+                                  ),
+                                ),
+                              ),
+                               Text(
+                                'ເມືອງ',
+                                style: regular,
+                              ),
+                              Expanded(
+                                child: SizedBox(
+                                  height: 50,
+                                  child: DropdownButtonFormField(
+                                    decoration: const InputDecoration(
+                                        border: InputBorder.none,
+                                        contentPadding:
+                                            EdgeInsets.only(left: 10)),
+                                    value: dropdowncity,
+                                    icon: const Icon(
+                                      Icons.keyboard_arrow_down,
+                                      color: Stycolors.darkblue,
+                                    ),
+                                    items: items.map((String items) {
+                                      return DropdownMenuItem(
+                                        value: items,
+                                        child: Text(
+                                          items,
+                                          style: regular,
+                                        ),
+                                      );
+                                    }).toList(),
+                                    onChanged: (String? newValue) {
+                                      setState(() {
+                                        dropdowncity = newValue!;
                                       });
                                     },
                                   ),

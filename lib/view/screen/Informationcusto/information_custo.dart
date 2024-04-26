@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:microfinance/controller/getdatacontroller.dart';
 import 'package:microfinance/util/Textstyle.dart';
 import 'package:microfinance/util/colorstyle.dart';
-import 'package:microfinance/util/images.dart';
 import 'package:microfinance/view/screen/Informationcusto/InfoDetailCusto.dart';
 import 'package:microfinance/view/screen/dashboard/widget/WidgwtLogo.dart';
 import 'package:microfinance/view/widget/bottomappbar.dart';
@@ -18,8 +17,9 @@ class InfoCustoScreen extends StatefulWidget {
 class _InfoCustoScreenState extends State<InfoCustoScreen> {
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      Provider.of<Getalldatacontroller>(context, listen: false);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<Getalldatacontroller>(context, listen: false)
+          .getAlldatacusto();
     });
 
     super.initState();
@@ -29,12 +29,7 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(Images.Background), fit: BoxFit.cover),
-        ),
+        color:Stycolors.background,
         child: GestureDetector(
           onTap: () {
             FocusScope.of(context).unfocus();
@@ -66,7 +61,7 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                                   children: [
                                     const Icon(
                                       Icons.search,
-                                      color: lightblue,
+                                      color: Stycolors.lightblue,
                                     ),
                                     SizedBox(
                                       height: 30,
@@ -127,7 +122,7 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                                     onRefresh: () async {
                                       await Future.delayed(
                                           const Duration(seconds: 1));
-                                      Getalldatacontroller().refreshdata();
+                                      value.refreshdata();
                                     },
                                     child: ListView.separated(
                                       physics:
@@ -139,14 +134,12 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                                         return const Divider();
                                       },
                                       itemBuilder: (context, index) {
-                                        final user = getdata[index];
                                         return GestureDetector(
                                           onTap: () {
                                             Navigator.of(context).push(
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        Detailcustomer(
-                                                            user: user)));
+                                                        DetailCustostreen()));
                                           },
                                           child: Column(
                                             children: [
@@ -157,11 +150,13 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                                                       MainAxisAlignment
                                                           .spaceAround,
                                                   children: [
-                                                    const CircleAvatar(
+                                                    CircleAvatar(
                                                         radius: 20,
                                                         backgroundImage:
-                                                            AssetImage(Images
-                                                                .icon_profile)),
+                                                            NetworkImage(getdata[
+                                                                    index]
+                                                                .profilePicture
+                                                                .toString())),
                                                     Text(getdata[index]
                                                         .fullName
                                                         .toString()),

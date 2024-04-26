@@ -30,12 +30,31 @@ class Getalldatarepo {
             .toList();
         return dataList;
       } else {
-        throw Exception(Error());
+        throw Exception('error');
       }
     } catch (e) {
       throw e.toString();
     }
   }
 
-   
+  Future<Map<String, dynamic>> getuserdataBYID(String id, String token) async {
+    Map<String, dynamic> data = {'customer_id': id};
+    try {
+      final response = await http.post(
+          Uri.parse('${Appconstants.getuserbyid}/id'),
+          body: jsonEncode(data),
+          headers: <String, String>{
+            'Content-Type': 'application/json; charset=UTF-8',
+            'Authorization': 'Bearer $token'
+          });
+      if (response.statusCode == 200) {
+        return jsonDecode(response.body);
+      } else {
+        print('fail status == >> ${response.statusCode}');
+        throw Exception('fail to request api ');
+      }
+    } catch (e) {
+      throw e.toString();
+    }
+  }
 }

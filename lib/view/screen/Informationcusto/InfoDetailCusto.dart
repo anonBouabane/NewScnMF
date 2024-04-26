@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:microfinance/data/model/getInfocusto_model.dart';
 import 'package:microfinance/util/Textstyle.dart';
 import 'package:microfinance/util/images.dart';
 import 'package:microfinance/view/screen/dashboard/widget/WidgwtLogo.dart';
 import 'package:microfinance/view/widget/bottomappbar.dart';
 
-class Detailcustomer extends StatelessWidget {
-  const Detailcustomer({super.key, required this.user});
-  final Getalldatamodel user;
+class DetailCustostreen extends StatelessWidget {
+ const DetailCustostreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +45,7 @@ class Detailcustomer extends StatelessWidget {
                             scale: 5,
                           ),
                           Text(
-                            '${user.fullName}',
+                            'ຂື່ລູກຄ້າ',
                             style: regularbold,
                           ),
                           const SizedBox(
@@ -57,24 +55,11 @@ class Detailcustomer extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                "ອາຍຸ : ${user.age} ",
+                                "ອາຍຸ :  ",
                                 style: regularbold,
                               ),
                               Text(
-                                "ເຮືອນເລກທີ :  ${user.houseNumber}",
-                                style: regularbold,
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "ເບີໂທ : ${user.phoneNumber} ",
-                                style: regularbold,
-                              ),
-                              Text(
-                                "ຫນ່ວຍ :  ${user.houseUnit}",
+                                "ເຮືອນເລກທີ :   ",
                                 style: regularbold,
                               ),
                             ],
@@ -83,24 +68,11 @@ class Detailcustomer extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                "ເບີວັອດແອັບ :  ${user.whatsAppNumber}",
+                                "ເບີໂທ :   ",
                                 style: regularbold,
                               ),
                               Text(
-                                "ບ້ານ :  ${user.villageNamge}",
-                                style: regularbold,
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "ອາຊີບ : ${user.customerJob}",
-                                style: regularbold,
-                              ),
-                              Text(
-                                "ເມືອງ :  ${user.districtsName}",
+                                "ຫນ່ວຍ :   ",
                                 style: regularbold,
                               ),
                             ],
@@ -109,11 +81,37 @@ class Detailcustomer extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                "ສະຖານທີ່ເຮັດວຽກ : ${user.customerJobLocation}",
+                                "ເບີວັອດແອັບ :   ",
                                 style: regularbold,
                               ),
                               Text(
-                                "ແຂວງ : ${user.provinceName}",
+                                "ບ້ານ :   ",
+                                style: regularbold,
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "ອາຊີບ :  ",
+                                style: regularbold,
+                              ),
+                              Text(
+                                "ເມືອງ :   ",
+                                style: regularbold,
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "ສະຖານທີ່ເຮັດວຽກ :  ",
+                                style: regularbold,
+                              ),
+                              Text(
+                                "ແຂວງ : ",
                                 style: regularbold,
                               ),
                             ],

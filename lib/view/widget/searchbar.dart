@@ -17,7 +17,7 @@ class SearchItem extends StatelessWidget {
       children: [
       const  Icon(
           Icons.search,
-          color: darkblue,
+          color: Stycolors.darkblue,
         ),
         SizedBox(
           height: 30,
