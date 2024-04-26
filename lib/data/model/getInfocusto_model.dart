@@ -42,6 +42,7 @@ class Getalldatamodel {
     villageNamge = json['village_namge'];
     districtsName = json['districts_name'];
     provinceName = json['province_name'];
+    
   }
 
   Map<String, dynamic> toJson() {

@@ -37,21 +37,22 @@ class Getalldatarepo {
     }
   }
 
-  Future<Map<String, dynamic>> getuserdataBYID(String id, String token) async {
-    Map<String, dynamic> data = {'customer_id': id};
+  Future<Getalldatamodel> getuserBYID(String id, String token) async {
+    Getalldatamodel respDATA = Getalldatamodel();
     try {
-      final response = await http.post(
-          Uri.parse('${Appconstants.getuserbyid}/id'),
-          body: jsonEncode(data),
-          headers: <String, String>{
-            'Content-Type': 'application/json; charset=UTF-8',
-            'Authorization': 'Bearer $token'
-          });
+      final http.Response response =
+          await http.post(Uri.parse('${Appconstants.getuserbyid}/id'),
+              headers: <String, String>{
+                'Content-Type': 'application/json; charset=UTF-8',
+                'Authorization': 'Bearer $token',
+              },
+              body: jsonEncode(<String, String>{"customer_id": id}));
       if (response.statusCode == 200) {
-        return jsonDecode(response.body);
+        respDATA = Getalldatamodel.fromJson(jsonDecode(response.body));
+        return respDATA;
       } else {
-        print('fail status == >> ${response.statusCode}');
-        throw Exception('fail to request api ');
+        throw Exception(
+            'fail to connect api && status code is == ${response.statusCode}');
       }
     } catch (e) {
       throw e.toString();

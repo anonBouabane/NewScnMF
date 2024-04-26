@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/state_manager.dart';
 import 'package:microfinance/data/model/getInfocusto_model.dart';
 import 'package:microfinance/data/repository/getdatarepo.dart';
 import 'package:microfinance/data/shared/shareperfer.dart';
@@ -26,19 +25,8 @@ class Getalldatacontroller extends ChangeNotifier {
     }
   }
 
-  void getuserdataBYID(String id, String token) async {
-    isloading = true;
-    notifyListeners();
-    final data = {}.obs;
-    try {
-      data.value = await getdatarepo.getuserdataBYID(id, token);
-    } catch (e) {
-      print('error${e}');
-      throw e.toString();
-    } finally {
-      isloading = false;
-      notifyListeners();
-    }
+  Future<Getalldatamodel> getuserdataByID(String id) async {
+    return await getdatarepo.getuserBYID(id, ShareData.token);
   }
 
   Future<void> refreshdata() async {

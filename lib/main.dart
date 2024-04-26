@@ -3,6 +3,7 @@ import 'package:microfinance/controller/authcontroller.dart';
 import 'package:microfinance/controller/getdatacontroller.dart';
 import 'package:microfinance/helper/Routehelper.dart';
 import 'package:microfinance/util/Appcontants.dart';
+import 'package:microfinance/view/screen/Informationcusto/InfoDetailCusto.dart';
 import 'package:microfinance/view/screen/auth/signin_screen.dart';
 import 'package:microfinance/view/screen/dashboard/creditScreen.dart';
 import 'package:microfinance/view/screen/dashboard/Marketing_screen.dart';
@@ -12,6 +13,7 @@ final Map<String, WidgetBuilder> map = {
   '/signinscreen': (_) => const SignInScreen(),
   '/marketing': (_) => const Marketing(),
   '/loan': (_) => const CreditScreen(),
+  'InfoDetailCusto': (_) =>const DetailCustoScreen(),
 };
 String? initial;
 void main() {

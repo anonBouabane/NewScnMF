@@ -33,6 +33,6 @@ final normal = TextStyle(
 final regularbold = TextStyle(
   fontFamily: "Roboto",
   fontSize: 17,
-  fontWeight: FontWeight.w900,
+  fontWeight: FontWeight.bold,
   color: Colors.black,
 ); 

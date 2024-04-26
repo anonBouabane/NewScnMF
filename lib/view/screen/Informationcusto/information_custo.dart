@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:microfinance/controller/getdatacontroller.dart';
 import 'package:microfinance/util/Textstyle.dart';
 import 'package:microfinance/util/colorstyle.dart';
-import 'package:microfinance/view/screen/Informationcusto/InfoDetailCusto.dart';
+import 'package:microfinance/util/images.dart';
 import 'package:microfinance/view/screen/dashboard/widget/WidgwtLogo.dart';
 import 'package:microfinance/view/widget/bottomappbar.dart';
 import 'package:provider/provider.dart';
@@ -29,7 +29,7 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color:Stycolors.background,
+        color: Stycolors.background,
         child: GestureDetector(
           onTap: () {
             FocusScope.of(context).unfocus();
@@ -136,10 +136,10 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                                       itemBuilder: (context, index) {
                                         return GestureDetector(
                                           onTap: () {
-                                            Navigator.of(context).push(
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        DetailCustostreen()));
+                                            Navigator.pushNamed(
+                                                context, 'InfoDetailCusto',
+                                                arguments:
+                                                    getdata[index].customerId);
                                           },
                                           child: Column(
                                             children: [
@@ -150,13 +150,10 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                                                       MainAxisAlignment
                                                           .spaceAround,
                                                   children: [
-                                                    CircleAvatar(
+                                                const   CircleAvatar(
                                                         radius: 20,
-                                                        backgroundImage:
-                                                            NetworkImage(getdata[
-                                                                    index]
-                                                                .profilePicture
-                                                                .toString())),
+                                                        backgroundImage:AssetImage(Images.LoGo)
+                                                            ),
                                                     Text(getdata[index]
                                                         .fullName
                                                         .toString()),
