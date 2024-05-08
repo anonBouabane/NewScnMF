@@ -150,10 +150,11 @@ class _InfoCustoScreenState extends State<InfoCustoScreen> {
                                                       MainAxisAlignment
                                                           .spaceAround,
                                                   children: [
-                                                const   CircleAvatar(
+                                                    const CircleAvatar(
                                                         radius: 20,
-                                                        backgroundImage:AssetImage(Images.LoGo)
-                                                            ),
+                                                        backgroundImage:
+                                                            AssetImage(
+                                                                Images.LoGo)),
                                                     Text(getdata[index]
                                                         .fullName
                                                         .toString()),

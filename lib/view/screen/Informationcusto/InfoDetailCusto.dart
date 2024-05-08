@@ -65,6 +65,7 @@ class _DetailCustoScreenState extends State<DetailCustoScreen> {
                                 const SizedBox(
                                   height: 10,
                                 ),
+                                Row(mainAxisAlignment: MainAxisAlignment.start,children: [Text("ອາຍຸ : ${item.age}",style: regularbold, )],),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
